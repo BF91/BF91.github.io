@@ -1,5 +1,10 @@
 h1 { 
-    color:green;
+    color: green;
+    @charset "UTF-8";
+    /*vendor*/
+   @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+   font-family: 'Lobster', cursive; 
+    /*styles*/
     font-size:40px"
-/* This would be a try of external stylesheet */
+/*This would be a try of external stylesheet*/
 }

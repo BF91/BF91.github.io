@@ -1,0 +1,7 @@
+@charset "UTF-8"
+@import "heading.css"
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Lobster&display=swap');
+
+body {
+    font-family: 'Inconsolata', monospace;
+}
