@@ -1,8 +1,11 @@
-h1 {
-    color: orange;
-    background-color: lightgray;
-    font-size: 80px;
+span {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
 }
-p {
-    color: slategray;
-} 
+div {
+    /* display: inline; */
+    border: 2px solid blueviolet;
+    margin: 20px;
+    padding: 20px;
+}
