@@ -1,11 +1,29 @@
-span {
-    display: inline-block;
-    margin: 20px;
-    padding: 20px;
+/* p.error {
+    color: red;
 }
-div {
-    /* display: inline; */
-    border: 2px solid blueviolet;
-    margin: 20px;
-    padding: 20px;
+p.success {
+    color: greenyellow;
 }
+p.success.feedback {
+    border: 1px dashed green;
+}
+#content {
+    background-color: rgb(141, 139, 139);
+    padding: 20px;
+} */
+    /* div p{
+        color: purple;
+    } */
+a[href*="google"]{
+    background-color: goldenrod;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+a[href$=".uk"]{
+    color: white;
+    background-color: red;
+    border: solid blue;
+} 
+/* non prende $ */
