@@ -3,51 +3,54 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
-        <title>CSS Basics</title>
+        <title>Marioclub</title>
     </head>
     <body>
-        <div id="content">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        <header> 
+            <h1>Marioclub</h1>
+        </header>
+        <selection class="banner">
+            <img src="img\mariobanner.png" alt="Marioclub welcome banner">
+            <div class="welcome">
+                <h2>Welcome to <br><span>Marioclub</span></h2>
+            </div>
+        </selection>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/join.html" class="join">Join the club</a></li>
+                <li><a href="/news.html">Latest News</a></li>
+                <li><a href="/games.html">New Games</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h2>It's a Me, Mario</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa aliquam id possimus
+                    laboriosam praesentium aliquid aut non consectetur! Numquam similique dolor
+                    distinctio optio quae ut a eum inventore, dolores odit! Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Sunt ipsam cum corporis maxime labore! Optio,
+                    excepturi consequuntur expedita tenetur modi labore sapiente magnam id accusantium
+                    repellendus libero, quam error recusandae?</p>
+            </article>
+            <ul class="images">
+                <li><img src="img/thumb-1.jpeg" alt="Mario thumb 1"></li>
+                <li><img src="img/thumb-2.jpeg" alt="Mario thumb 2"></li>
+            </ul>
+        </main>
+        <selection class="join">
+            <h2>Join today!</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat est tenetur
+                quod ipsum magnam? Quisquam necessitatibus iste atque nobis ipsum possimus,
+                quaerat, voluptatibus porro blanditiis deleniti architecto, sunt dicta nulla!
             </p>
-            <p class="error">
-                It is a long established fact that a reader will be distracted by the readable content of
-                a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-                as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
-                web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites
-                still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose
-                (injected humour and the like).
-            </p>
-            <p class="success">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
-                by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,
-                you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
-                Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary
-                of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
-                The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-            </p>
-            <p class="success feedback">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-        </div>
-        <div class="error">
-            I am an Error!
-        </div>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, nemo earum sapiente illum totam fuga ab,
-            atque ullam voluptate obcaecati tempore quasi? Quibusdam maxime dolor reiciendis expedita quidem cum impedit?
-        </p>
-        <a href="http://www.google.com/"> Google</a>
-        <a href="http://wwww.youtube.com/"> YouTube</a>
-        <a href="https://jigsawmats4martialarts.co.uk/"> Fight</a>
-        
+            <form>
+                <input type="email" name="email" placeholder="type email & hit enter" required>
+            </form>
+        </selection>
+        <footer>
+            <p class="copyright">Copyright 2019 Marioclub</p>
+        </footer>
     </body>
 </html>
