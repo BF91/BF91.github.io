@@ -91,7 +91,7 @@ article{
 .images li img{
     max-width: 100%;
 }
-section.join{
+section .join{
     background: #F4F4F4;
     text-align: center;
     padding: 60px 20px;
@@ -112,4 +112,12 @@ footer{
     color: white;
     padding: 10px;
     text-align: center;
+}
+
+/* pseudo classes */
+
+nav li a:hover{
+    text-decoration: underline;
+    /* background-color: pink;
+    padding: 3px; */
 }
