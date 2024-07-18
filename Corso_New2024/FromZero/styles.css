@@ -200,6 +200,6 @@ p::after{
         position: relative;
     }
     nav{
-        top: 0;
+        top: 0 ;
     }
 }
