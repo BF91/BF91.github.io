@@ -5,6 +5,8 @@ html, body{
     margin: 0;
 }
 
+/*  // BACKGROUND// */
+
 .grass, .sky, .road{
     position: relative;
 }
@@ -35,4 +37,23 @@ html, body{
     width: 100%;
     position: absolute;
     top: 45%;
+}
+
+/* // ELEMENT TO ANIMATE // */
+
+.mario{
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    animation-name: drive;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+/*  //KEY FRAME// */
+
+@keyframes drive{
+    from{transform: translateX(0)}
+    to{transform: translateX(500px);}
+    
 }
