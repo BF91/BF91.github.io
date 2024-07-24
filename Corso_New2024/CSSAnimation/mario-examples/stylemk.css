@@ -1,0 +1,38 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass, .sky, .road{
+    position: relative;
+}
+
+.sky{
+    height: 40%;
+    background: skyblue;
+}
+
+.grass{
+    height: 30%;
+    background: seagreen;
+}
+
+.road{
+    height: 30%;
+    background: gray;
+    box-sizing: border-box;
+    border-top: 10px solid rgb(75, 74, 74);
+    border-bottom: 10px solid rgb(75, 74, 74);
+    width: 100%;
+}
+
+.lines{
+    box-sizing: border-box;
+    border: 5px dashed #ffff;
+    height: 8px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+}
