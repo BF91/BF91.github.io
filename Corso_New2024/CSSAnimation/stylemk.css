@@ -43,17 +43,52 @@ html, body{
 
 .mario{
     position: absolute;
-    top: -40px;
+    top: -60px;
     left: 0px;
-    animation-name: drive;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
+    animation: drive 3s both infinite linear, jump 0.5s 1.2s ease;
 }
+
+.luigi{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    animation-name: drive;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: linear;
+}
+
+.cloud{
+    position: absolute;
+}
+.cloud:nth-child(1){
+    width: 200px;
+    top: 100px;
+    opacity: 0.5;
+    animation: wind 70s linear infinite reverse;
+}
+.cloud:nth-child(2){
+    width: 300px;
+    top: 0px;
+    animation: wind 65s linear infinite reverse;
+}
+
 
 /*  //KEY FRAME// */
 
 @keyframes drive{
-    from{transform: translateX(0)}
-    to{transform: translateX(500px);}
-    
+    from{transform: translateX(-200px)}
+    to{transform: translateX(1550px);}    
+}
+
+@keyframes wind{
+    from{left: -300px}
+    to{left: 100%}
+}
+
+@keyframes jump{
+    0%{top -60px}
+    50%{top 150px}
+    100%{top -60px}
 }
