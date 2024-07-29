@@ -14,7 +14,24 @@ body{
 }
 
 .flex-container{
-    //display: flex;
+   //display: flex;
+    background: #fff;
 }
 
+.box{
+    height: 100px;
+    min-width: 100px;
+    float: left;
+}
 
+.one{
+    background: red;
+}
+
+.two{
+    background: blue;
+}
+
+.three{
+    background: green;
+}
