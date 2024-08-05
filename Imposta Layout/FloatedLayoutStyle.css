@@ -78,9 +78,21 @@ article{
 /* section margin cllapsing problem */
 section > *:first-child{
     margin-top: 1.5em;
-    background-color: red;
 }
 section::before{
     display: table;
     content: "";
+}
+section div article:nth-child(2n+1){
+    clear: left;
+}
+/* internal article */
+section div article img{
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+}
+section div article p{
+    overflow-y: auto;
+    text-align: justify;
 }
