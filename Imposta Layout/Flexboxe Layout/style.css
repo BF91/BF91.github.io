@@ -93,7 +93,32 @@ main > * + *{
     text-align: left;
     font-weight: bold;
 }
-.login-form input{
+.login-form input[type='text'], .login-form input[type='password']{
     display: block;
     width: 100%;
+    margin: 1px solid #dedede;
+    padding: 0.5em 1em;
+}
+
+.centered{
+    text-align: center;
+}
+.cost{
+    display: flex;
+    justify-content: center;/*orizontal*/
+    align-items: center;/*vertical*/
+    line-height: 0.7em;
+}
+.cost > span{
+    margin-top: 0;
+}
+.cost-currency{
+    font-size: 2em;
+}
+.cost-dollars{
+    font-size: 4em;
+}
+.cost-cents{
+    font-size: 1.5em;
+    align-self: flex-start;
 }
