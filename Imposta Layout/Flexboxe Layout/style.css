@@ -108,6 +108,10 @@ main > * + *{
     flex-direction: column;
 }
 .cost{
+    margin-top: auto;
+    padding: 1.5em 0;
+}
+.cost{
     display: flex;
     justify-content: center;/*orizontal*/
     align-items: center;/*vertical*/
@@ -115,6 +119,8 @@ main > * + *{
 }
 .cost > span{
     margin-top: 0;
+    display: block;
+    line-height: 0.6em;
 }
 .cost-currency{
     font-size: 2em;
