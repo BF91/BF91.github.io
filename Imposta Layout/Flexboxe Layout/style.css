@@ -99,9 +99,13 @@ main > * + *{
     margin: 1px solid #dedede;
     padding: 0.5em 1em;
 }
-
+/* special offer banner */
 .centered{
     text-align: center;
+}
+.spacial-offered{
+    display: flex;
+    flex-direction: column;
 }
 .cost{
     display: flex;
@@ -121,4 +125,11 @@ main > * + *{
 .cost-cents{
     font-size: 1.5em;
     align-self: flex-start;
+}
+a.cta-button{
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    text-decoration: none;
+    padding: 0.5em 1em;
 }
