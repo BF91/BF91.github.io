@@ -10,10 +10,22 @@
 }
 
 body{
-    background-color: #809b90; 
+    background-color: #7fefc3; 
     font-family: "Calibri", sans-serif;
 }
 
 .container{
-    
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* //GRID// */
+.container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 1.5em
+}
+.container > *{
+    border: 1px solid #000;
 }
