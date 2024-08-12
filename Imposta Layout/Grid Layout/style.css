@@ -1,0 +1,19 @@
+/* //GENERIC RULES// */
+:root{
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after{
+    box-sizing: inherit;
+}
+
+body{
+    background-color: #809b90; 
+    font-family: "Calibri", sans-serif;
+}
+
+.container{
+    
+}
