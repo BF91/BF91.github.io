@@ -24,8 +24,9 @@ body{
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(4, auto);
-    grid-gap: 1.5em
+    grid-gap: 1.5em;
 }
-.container > *{
-    border: 1px solid #000;
+
+header,nav{
+    grid-column: ;
 }
