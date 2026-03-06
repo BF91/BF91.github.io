@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO base -->
+    <title>Cristiana Curti</title>
+    <meta name="description" content="Descrizione del sito in 150-160 caratteri per i motori di ricerca." />
+    <meta name="author" content="BDFurlan" />
+
+    <!-- Open Graph (anteprima su social: WhatsApp, Facebook, LinkedIn…) -->
+    <meta property="og:title"       content="NomeSito – Tagline breve" />
+    <meta property="og:description" content="Descrizione per la condivisione social." />
+    <meta property="og:image"       content="https://tuosito.com/img/og-cover.jpg" />
+    <meta property="og:url"         content="https://tuosito.com/" />
+    <meta property="og:type"        content="website" />
+
+    <!-- Favicon (metti i file nella cartella /img) -->
+    <link rel="icon"             href="/img/favicon.ico" />
+    <link rel="icon"             href="/img/favicon.svg"   type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+
+    <!-- Font Google (caricamento ottimizzato 2026) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="nav-logo">Cristiana Curti<!--Nome Sito--></a>
+
+                <!-- Hamburger (visibile solo su mobile) -->
+            <button class="nav-toggle" id="nav-toggle"
+                aria-controls="nav-links"
+                aria-expanded="false"
+                aria-label="Apri menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Link navigazione -->
+            <nav class="nav-links" id="nav-links" aria-label="Menu principale">
+                <a href="#contatti">Contatti</a>
+                <a href="#chi-sono">Chi sono</a>
+                <a href="#servizi">Servizi</a>
+                <a href="#testimonianze">Testimonianze</a>
+                <a href="#contatti" class="nav-cta">Inizia ora →</a>
+            </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+
+        <span class="hero-eyebrow">La tua frase breve memorabile di impatto!</span>
+        <h1 id="hero-title">Titolo Sito</h1>
+        <h2>Sotto titotlo</h2>
+        <p>Breve paragrafo di benvenuto</p>
+
+        <div class="hero-actions">
+          <a href="#contatti"  class="btn-primary">Contattaci</a>
+          <a href="#servizi"   class="btn-outline">Scopri i servizi</a>
+        </div>
+        </div>
+    </section>
+
+    <!-- SERVIZI -->
+    <section class="section" id="servizi" aria-labelledby="servizi-title"></section>
+        <div class="container">
+            <header class="section-header center fade-in">
+                <span class="section-label">Cosa faccio</span>
+                <h2 class="section-title" id="section-title">I miei servizi</h2>
+                <p class="section-lead">TESTO DESCRIZIONE</p>
+            </header>
+
+            <div class="card-grid">
+                <article class="card fade-in">
+                    <div class="card-icon" aria-hidden="true">?</div>
+                    <h3>Servizio Uno</h3>
+                    <p>Descrizione servizio 1</p>
+                </article>
+            </div>
+
+            <div class="card-grid">
+                <article class="card fade-in">
+                    <div class="card-icon" aria-hidden="true">?</div>
+                    <h3>Servizio Due</h3>
+                    <p>Descrizione servizio 2</p>
+                </article>
+            </div>
+
+            <div class="card-grid">
+                <article class="card fade-in">
+                    <div class="card-icon" aria-hidden="true">?</div>
+                    <h3>Servizio Tre</h3>
+                    <p>Descrizione servizio 3</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+<!-- CHI SONO - presentazione  (2 colonne) -->
+    <section class="section section--alt" id="chi-sono" aria-labelledby="chi-sono-title">
+        <div class="container">
+
+            <div class="two-col fade-in">
+                <!-- Immagine: sostituisci con <img src="..." alt="..."> -->
+          <div class="two-col-img" role="img" aria-label="Foto ritratto persona">
+            [img Persona]
+            </div>
+            <div class="two-col-text">
+                <span class="section-label">Chi sono</span>
+                <h2 class="section-title" id="chi-sono-title">la mia storia in breve</h2>
+                <p class="section-lead">TESTO</p>
+                <br>
+                <a href="#contatti" class="btn-primary">Contattami</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TESTIMONIANZE/RECENSIONI -->
+    <section class="section section--alt" id="testimonianze" aria-labelledby="testi-title">
+
+        <div class="container">
+            <header class="section-header center fade-in">
+                <span class="section-label">Come dicono di me</span>
+                <h2 class="section-title">Testimonianze</h2>
+            </header>
+
+            <div class="testimonials-grid">
+
+                <blockquote class="testimonial fade-in">
+                    <p class="testimonial-quote">"Descrizione esperienza e testimonianza positiva"</p>
+                    <footer class="testimonial-author">
+                        <div class="testimonial-avatar" aria-hidden="true">MR</div>
+                        <div>
+                            <div class="testimonial-name">Mario Rossi</div>
+                            <div class="testimonial-serrvice">Lettura Tarocchi</div>
+                        </div>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial fade-in">
+                    <p class="testimonial-quote">"Descrizione esperienza e testimonianza positiva"</p>
+                    <footer class="testimonial-author">
+                        <div class="testimonial-avatar" aria-hidden="true">BS</div>
+                        <div>
+                            <div class="testimonial-name">Bianchi Sara</div>
+                            <div class="testimonial-serrvice">Meditazione Corporea</div>
+                        </div>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+     <!-- CTA BANNER (?) -->
+    <section class="section" id="contatti" aria-labelledby="cta-title">
+
+        <div class="container">
+            <div class="cta-banner fade-in">
+                <h2 id="cta-title">Pronti per iniziare?</h2>
+                <p>TESTO ACCATTIVANTE</p>
+                <a href="mailto:info@???.com" class="btn-primary">Scrivici una mail</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+         <div class="container">
+
+            <div class="footer-grid">
+
+            <div class="footer-brand">
+            <span class="nav-logo">Nome sito</span>
+            <p>Una frase breve che descrive la tua attività o il tuo valore principale. Oppure "Slogan".</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigazione</h4>
+                <ul>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#chi-sono">Chi sono</a></li>
+                    <li><a href="#testimonianze">Testimonianze</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contattami</h4>
+                <ul>
+                    <li><a href="tel:00393489160435">+39 348 9160435</a></li>
+                    <li><a href="mailto:info@???.com">info@???.com</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+                </ul>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 NomeSito. Tutti i diritti riservati.</span>
+                <span>Realizzato da BDFurlan</span>
+            </div>
+         </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
