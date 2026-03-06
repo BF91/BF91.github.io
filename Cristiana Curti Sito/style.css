@@ -1,0 +1,64 @@
+/*  1. DESIGN — variabili globali */
+:root {
+    /* Palette principale - "notte - Terra */
+    --clr-bg:          #0e0d0b;
+    --clr-bg-alt:      #161410;          /* superfici card */
+    --clr-bg-raised:   #1e1b16;          /* header, pannelli elevati */
+    --clr-border:      rgba(212,188,140,.18);
+
+    /* Accenti */
+  --clr-gold:        #c9a96e;          /* oro antico — titoli, accenti */
+  --clr-gold-light:  #e2c99a;          /* hover, highlights */
+  --clr-sage:        #7d9b82;          /* verde salvia — secondo accento */
+  --clr-sage-light:  #a3bfa8;
+  --clr-terracotta:  #9c5a3c;          /* terracotta — CTA */
+  --clr-terracotta-h:#b4663f;
+
+   /* Testo */
+  --clr-text:        #ede8de;          /* primario */
+  --clr-text-soft:   #b0a898;          /* corpo secondario */
+  --clr-muted:       #6e6558;          /* didascalie, placeholder */
+
+  /* Tipografia — font caricati nel <head> dell'HTML */
+  --font-display:    'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-body:       'DM Sans', system-ui, sans-serif;
+
+  /* Spaziature */
+  --max-width:       1160px;
+  --pad-x:           clamp(1.25rem, 5vw, 2.5rem);
+  --section-py:      clamp(4rem, 9vw, 7rem);
+
+  /* Forma */
+  --radius:          10px;
+  --radius-lg:       20px;
+  --radius-pill:     50px;
+
+  /* Ombre */
+  --shadow-sm:       0 2px 12px rgba(0,0,0,.35);
+  --shadow-md:       0 10px 40px rgba(0,0,0,.5);
+  --shadow-gold:     0 0 32px rgba(201,169,110,.12);
+
+  /* Animazioni */
+  --trans:           .28s cubic-bezier(.4,0,.2,1);
+  --trans-slow:      .55s cubic-bezier(.4,0,.2,1);
+
+  /* Linea decorativa */
+  --ornament-color:  var(--clr-gold);
+}
+
+/* RESET MODERNO */
+*,*::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    color-scheme: dark;
+}
+
+body {
+    
+}
