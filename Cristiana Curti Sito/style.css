@@ -448,3 +448,34 @@ em {
     flex-wrap: wrap;
 }
 
+/* IMG Hero */
+.hero-image {
+    position: relative;
+    margin: 4rem auto 0;
+    max-width: 860px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--clr-border);
+    box-shadow: var(--shadow-md), var(--shadow-gold);
+    aspect-ratio: 16/8;
+    background: linear-gradient(135deg, #1e1b16 0%, #2a2419 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-muted);
+    font-size: 0.88rem;
+    letter-spacing: 0.05em;
+}
+
+/* Bordo stile Hero */
+.hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* SEZIONI GENERICHE */
