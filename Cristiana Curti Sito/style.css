@@ -525,3 +525,61 @@ em {
 }
 
 /* BOTTONI */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2.1rem;
+    background: var(--clr-terracotta);
+    color: #fff;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: background var(--trans), transform var(--trans), box-shadow var(--trans);
+    box-shadow: 0 4px 20px rgba(156, 90, 60, .35);
+}
+.btn-primary:hover {
+    background: var(--clr-terracotta-h);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(156, 90, 60, .45);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2.1rem;
+    border: 1px solid var(--clr-gold);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--clr-gold);
+    transition: background var(--trans), color var(--trans), transform var(--trans);
+}
+.btn-outline:hover {
+    background: var(--clr-gold);
+    color: var(--clr-bg);
+    transform: translateY(-2px);
+}
+
+.btn-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--clr-sage-light);
+    transition: color var(--trans), gap var(--trans);
+}
+.btn-text:hover {
+    color: var(--clr-sage);
+    gap: 0.7rem
+}
+
+/* SERVIZI - card */
