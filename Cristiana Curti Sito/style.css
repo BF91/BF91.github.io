@@ -479,3 +479,49 @@ em {
 }
 
 /* SEZIONI GENERICHE */
+.section {
+    padding-block: var(--section-py);
+}
+
+.section--alt {
+    background: var(--clr-bg-alt);
+    position: relative;
+}
+
+/* Linea decorativa alto sezione ALT */
+.section--alt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--clr-gold), transparent);
+    opacity: 0.5;
+}
+
+/* Divisione Onramentale */
+.divider-ornament {
+    display: flax;
+    align-items: center;
+    gap: 1.25rem;
+    margin-block: 1rem;
+}
+
+.divider-ornament::before,
+.divider-ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--clr-border), transparent);
+}
+
+.divider-ornament span {
+    color: var(--clr-gold);
+    font-size: 0.85rem;
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+/* BOTTONI */
