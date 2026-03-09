@@ -360,3 +360,91 @@ em {
 }
 
 /* HERO */
+.hero {
+    position: relative;
+    padding-block: clamp(5rem, 14vw, 10rem);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Effetto luce */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    max-width: 900px;
+    height: 50vh;
+    background: radial-gradient(ellipse at 50% 0%, 
+    rgba(201, 169, 110, .16) 0%,
+    rgba(125, 155130, .07) 45%
+    transparent 70%
+    );
+    pointer-events: none;
+}
+
+/* Cerchio decorativo sotto */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 55vw;
+    max-width: 650px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+    rgbs(125, 155, 130, 0.05) 0%,
+    transparent 65%
+    );
+    pointer-events: none;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--clr-sage-light);
+    margin-bottom: 1.75rem;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+    content: '✦';
+    font-size: 0.55rem;
+    opacity: 0.7;
+}
+
+.hero h1 {
+    max-width: 16ch;
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    display: block;
+    font-style: italic;
+    color: var(--clr-gold);
+    font-weight: 400;
+}
+
+.hero > .container > p {
+    max-width: 50ch;
+    margin-inline: auto;
+    margin-bottom: 2.75rem;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
