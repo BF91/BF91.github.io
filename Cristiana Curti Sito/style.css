@@ -821,3 +821,40 @@ em {
 }
 
 /* CTA BANNER */
+.cta-banner {
+    position: relative;
+    border-radius: var(--radius-lg);
+    padding: clamp(3rem, 7vw, 5.5rem) var(--pad-x);
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(201, 169, 110, .2);
+    background:
+        radial-gradient(ellipse 90% 70% at 50% 120%, rgba(201, 169, 110, .2) 0%, transparent 60%);
+        linear-gradient(160deg, #1a1712 0%, #0e0d0b 100%);
+}
+
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(201, 169, 110, .05);
+    pointer-events: none;
+}
+
+.cta-banner h2 {
+    font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+    margin-bottom: 1rem;
+}
+
+.cta-banner p {
+    max-width: 50ch;
+    margin-inline: auto;
+    margin-bottom: 2.25rem;
+    font-size: 1.05rem;
+}
+
+/* FOOTER */
