@@ -962,4 +962,41 @@ em {
     .spin-slow { animation: spin-slow 40s linear infinite; }
 }
 
-/* CURSORE PERSONALIZZATO */
+/* CURSORE PERSONALIZZATO 
+@media (pointer: fine) {
+ Nota: per un cursore SVG personalizzato, crea il file
+     /img/cursor.svg e decommentate le righe sottostanti 
+ body { cursor: url('/img/cursor.svg') 8 8, auto; } 
+
+  Cursore puntatore sui link
+  a, button { cursor: pointer; }
+}
+*/
+
+/* Selezione Text */
+::selection {
+    background: rgba(201, 169, 110, .25);
+    color: var(--clr-gold-light);
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--clr-bg);}
+::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 110, .3);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 169, 110, .55);
+}
+
+/* PRINT BASE */
+@media print {
+    .site-header, .site-footer, .nav-toggle { display: none !important; }
+    body { background: #fff; color: #000; }
+    a::after {
+        content: ' (' attr(href) ')'; 
+        font-size: 0.8em;
+        color: #555;
+    }
+}
