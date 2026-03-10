@@ -858,3 +858,108 @@ em {
 }
 
 /* FOOTER */
+.site-footer {
+    background: var(--clr-bg-raised);
+    border-top: 1px solid var(--clr-border);
+    padding-block: 3.5rem 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 2fr repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width 480px) {
+    .footer-grid { grid-template-columns: 1fr;}
+}
+
+.footer-brand .nav-logo {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.footer-brand p {
+    font-size: 0-9rem;
+    max-width: 30ch;
+    line-height: 1.7;
+}
+
+.footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--clr-gold);
+    margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-col ul a {
+    font-size: 0.88rem;
+    color: var(--clr-muted);
+    transition: color var(--trans);
+}
+.footer-col ul a:hover {
+    color: var(--clr-gold-light);
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--clr-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: var(--clr-muted);
+    letter-spacing: 0.04em;
+}
+
+/* ANIMATION SCROLL */
+@media (prefers-reduced-motion: no-preference) {
+    .fade-in {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* animazione ritardo griglia */
+    .card:nth-child(1) { transition: 0.05s; }
+    .card:nth-child(2) { transition: 0.15s;}
+    .card:nth-child(3) { transition: 0.25s;}
+    .card:nth-child(4) { transition: 0.35s;}
+
+    /* animaz pulsante caricamento hero */
+    @keyframes float-pulse {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+
+    /* rotazione cerchio decor */
+    @keyframes spin-low {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .spin-slow { animation: spin-slow 40s linear infinite; }
+}
+
+/* CURSORE PERSONALIZZATO */
