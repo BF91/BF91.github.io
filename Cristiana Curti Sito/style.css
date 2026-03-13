@@ -623,19 +623,25 @@ em {
     opacity: 1;
 }
 
-/* Icona/simbolo */
-.card-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, rgba(201, 169, 110, .15) 0%, rgba(125, 155, 130, .1) 100%);
-    border: 1px solid rgba(201, 169, 110, .25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
+/* Card IMG icon */
+.card-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
     margin-bottom: 1.5rem;
-    flex-shrink: 0;
+    border: 1px solid var(--clr-border);
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.05);
 }
 
 .card h3 {
