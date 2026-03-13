@@ -11,8 +11,8 @@
   --clr-gold-light:  #e2c99a;          /* hover, highlights */
   --clr-sage:        #7d9b82;          /* verde salvia — secondo accento */
   --clr-sage-light:  #a3bfa8;
-  --clr-terracotta:  #8b5cf6;          /* AMETISTA profondo — CTA */
-  --clr-terracotta-h:#a78bfa;          /* Ametista chiaro */
+  /* --clr-terracotta:  #8b5cf6;          modificato in AMETISTA profondo — CTA */
+  /* --clr-terracotta-h:#a78bfa;          modificato in Ametista chiaro */
 
    /* Viola Ametista per uso futuro */
    --clr-amethyst: #8b5cf6;
@@ -97,7 +97,7 @@ button {
 }
 
 :focus-visible {
-    outline: 2px solid var(--clr-gold);
+    outline: 2px solid var(--clr-amethyst);
     outline-offset: 4px;
     border-radius: 4px;
 }
@@ -383,10 +383,10 @@ em {
     width: 80vw;
     max-width: 900px;
     height: 50vh;
-    background: radial-gradient(ellipse at 50% 0%, 
-    rgba(201, 169, 110, .12) 0%,
-    rgba(107, 78, 138, .08) 40%
-    transparent 70%
+    background: radial-gradient(ellipse at 50% 0%,
+        rgba(201,169,110,.10) 0%,
+        rgba(139,92,246,.08) 45%,
+        transparent 70%
     );
     pointer-events: none;
 }
@@ -536,7 +536,7 @@ em {
     align-items: center;
     gap: 0.5rem;
     padding: 0.85rem 2.1rem;
-    background: var(--clr-terracotta);
+    background: var(--clr-amethyst);
     color: #fff;
     border-radius: var(--radius-pill);
     font-family: var(--font-body);
@@ -544,12 +544,12 @@ em {
     font-size: 0.9rem;
     letter-spacing: 0.05em;
     transition: background var(--trans), transform var(--trans), box-shadow var(--trans);
-    box-shadow: 0 4px 20px rgba(107, 78, 138, .4);
+    box-shadow:  0 4px 20px rgba(139,92,246,.4);
 }
 .btn-primary:hover {
-    background: var(--clr-terracotta-h);
+    background: var(--clr-amethyst-h);
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(107, 78, 138, .55);
+    box-shadow: 0 8px 28px rgba(139,92,246,.55);
 }
 
 .btn-outline {
@@ -621,8 +621,8 @@ em {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-md), var(--shadow-gold);
-    border-color: rgba(201,169,110,.35);
+    box-shadow: var(--shadow-md), 0 0 32px rgba(139,92,246,.15);
+    border-color: rgba(139,92,246,.5);
 }
 
 .card:hover::before{
@@ -789,8 +789,8 @@ em {
     font-family: var(--font-display);
     font-size: 5rem;
     line-height: 1;
-    color: var(--clr-gold);
-    opacity: 0.12;
+    color: var(--clr-amethyst);
+    opacity: 0.2;
     pointer-events: none;
     user-select: none;
 }
@@ -815,7 +815,7 @@ em {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--clr-gold) 0%, var(--clr-terracotta) 100%);
+    background: linear-gradient(135deg, var(--clr-gold) 0%, var(--clr-amethyst) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -847,7 +847,8 @@ em {
     overflow: hidden;
     border: 1px solid rgba(201, 169, 110, .2);
     background:
-        radial-gradient(ellipse 90% 70% at 50% 120%, rgba(201, 169, 110, .2) 0%, transparent 60%),
+        radial-gradient(ellipse 90% 70% at 50% 120%, rgba(139,92,246,.15) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 50% 110%, rgba(201,169,110,.1) 0%, transparent 50%),
         linear-gradient(160deg, #1a1712 0%, #0e0d0b 100%);
 }
 
@@ -994,19 +995,19 @@ em {
 
 /* Selezione Text */
 ::selection {
-    background: rgba(201, 169, 110, .25);
-    color: var(--clr-gold-light);
+    background: rgba(139,92,246,.3);
+    color: #fff;
 }
 
 /* Scroll Bar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--clr-bg);}
 ::-webkit-scrollbar-thumb {
-    background: rgba(201, 169, 110, .3);
+    background: rgba(139,92,246,.4);
     border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(201, 169, 110, .55);
+    background: rgba(139,92,246,.65);
 }
 
 /* PRINT BASE */
