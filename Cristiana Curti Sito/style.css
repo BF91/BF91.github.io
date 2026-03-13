@@ -11,9 +11,14 @@
   --clr-gold-light:  #e2c99a;          /* hover, highlights */
   --clr-sage:        #7d9b82;          /* verde salvia — secondo accento */
   --clr-sage-light:  #a3bfa8;
-  --clr-terracotta:  #9c5a3c;          /* terracotta — CTA */
-  --clr-terracotta-h:#b4663f;
+  --clr-terracotta:  #6b4e8a;          /* AMETISTA profondo — CTA */
+  --clr-terracotta-h:#7d5da0;          /* Ametista chiaro */
 
+   /* Viola Ametista per uso futuro */
+   --clr-amethyst: #6b4e8a;
+   --clr-amethyst-h: #7d5da0;
+   --clr-amethyst-glow: rgba(107, 78, 138, 0.15);
+   
    /* Testo */
   --clr-text:        #ede8de;          /* primario */
   --clr-text-soft:   #b0a898;          /* corpo secondario */
@@ -260,7 +265,7 @@ em {
 
 .nav-links a:hover {
     color: var(--clr-gold-light);
-    background: rgba(201, 169, 110, .07);
+    background: rgba(107, 78, 138, .08);
 }
 
 /* Pulsante CTA in nav bar */
@@ -378,8 +383,8 @@ em {
     max-width: 900px;
     height: 50vh;
     background: radial-gradient(ellipse at 50% 0%, 
-    rgba(201, 169, 110, .16) 0%,
-    rgba(125, 155, 130, .07) 45%
+    rgba(201, 169, 110, .12) 0%,
+    rgba(107, 78, 138, .08) 40%
     transparent 70%
     );
     pointer-events: none;
@@ -538,12 +543,12 @@ em {
     font-size: 0.9rem;
     letter-spacing: 0.05em;
     transition: background var(--trans), transform var(--trans), box-shadow var(--trans);
-    box-shadow: 0 4px 20px rgba(156, 90, 60, .35);
+    box-shadow: 0 4px 20px rgba(107, 78, 138, .4);
 }
 .btn-primary:hover {
     background: var(--clr-terracotta-h);
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(156, 90, 60, .45);
+    box-shadow: 0 8px 28px rgba(107, 78, 138, .55);
 }
 
 .btn-outline {
