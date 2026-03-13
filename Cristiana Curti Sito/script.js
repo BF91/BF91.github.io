@@ -31,7 +31,9 @@ if (header) {
 
 // 3. Animazione fede-in allo scroll
 function activateFadeIns() {
-    const elements = document.querySelectorAll('.fade-in';
+    document.body.classList.add('js-ready');
+
+    const elements = document.querySelectorAll('.fade-in');
         if (!elements.length) return;
         if (!('IntersectionObserver' in window)) {
             elements.forEach(el => el.classList.add('visible'));
