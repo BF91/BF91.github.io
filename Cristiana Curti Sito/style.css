@@ -11,14 +11,15 @@
   --clr-gold-light:  #e2c99a;          /* hover, highlights */
   --clr-sage:        #7d9b82;          /* verde salvia — secondo accento */
   --clr-sage-light:  #a3bfa8;
-  --clr-terracotta:  #6b4e8a;          /* AMETISTA profondo — CTA */
-  --clr-terracotta-h:#7d5da0;          /* Ametista chiaro */
+  --clr-terracotta:  #8b5cf6;          /* AMETISTA profondo — CTA */
+  --clr-terracotta-h:#a78bfa;          /* Ametista chiaro */
 
    /* Viola Ametista per uso futuro */
-   --clr-amethyst: #6b4e8a;
-   --clr-amethyst-h: #7d5da0;
-   --clr-amethyst-glow: rgba(107, 78, 138, 0.15);
-   
+   --clr-amethyst: #8b5cf6;
+   --clr-amethyst-h: #a78bfa;
+   --clr-amethyst-dim: #6d3fd4
+   --clr-amethyst-glow: rgba(139, 92, 246, 0.2);
+
    /* Testo */
   --clr-text:        #ede8de;          /* primario */
   --clr-text-soft:   #b0a898;          /* corpo secondario */
