@@ -855,8 +855,8 @@ em { color: var(--clr-gold); font-style: italic; }
 ::selection { background: rgba(139,92,246,.3); color: #fff; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--clr-bg); }
-::-webkit-scrollbar-thumb { background: rgba(139,92,246,.4); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(139,92,246,.65); }
+::-webkit-scrollbar-thumb { background: rgba(201,169,110,.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { rgba(201,169,110,.65); }
 
 @media print {
     .site-header, .site-footer, .nav-toggle, .back-to-top { display: none !important; }
