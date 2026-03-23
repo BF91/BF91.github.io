@@ -46,7 +46,15 @@
             <nav class="nav-links" id="nav-links" aria-label="Menu principale">
                 <a href="#contatti">Contatti</a>
                 <a href="#chi-sono">Chi sono</a>
-                <a href="#servizi">Servizi</a>
+                <div class="nav-drop-down">
+                    <button class="nav-drop-down-toggle" aria-expanded="false" aria-haspopup="true">
+                        Servizi<span class="nav-drop-down-arrow">▾</span>
+                    </button>
+                    <div class="nav-dropdown-menu" role="menu">
+                        <a href="#servizi" data-tab="panel-anima" role="menuitem">✦ Percorsi dell'Anima</a>
+                        <a href="#servizi" data-tab="panel-corpo" role="menuitem">◈ Benessere del Corpo</a>
+                    </div>
+                </div>
                 <a href="#testimonianze">Testimonianze</a>
                 <a href="#contatti" class="nav-cta">Inizia ora →</a>
             </nav>
@@ -72,43 +80,79 @@
     </section>
 
     <!-- SERVIZI -->
-    <section class="section" id="servizi" aria-labelledby="servizi-title"></section>
+    <section class="section" id="servizi" aria-labelledby="servizi-title">
         <div class="container">
             <header class="section-header center fade-in">
                 <span class="section-label">Cosa faccio</span>
-                <h2 class="section-title" id="section-title">I miei servizi</h2>
-                <p class="section-lead">TESTO DESCRIZIONE</p>
+                <h2 class="section-title" id="servizi-title">I miei servizi</h2>
+                <p class="section-lead">Percorsi su misura per il tuo benessere - dell'anima e del corpo</p>
             </header>
+            <!-- TAB SWITCHER -->
+             <div class="services-tab fade-in" role="tablist" aria-label="Categorie servizi">
+                <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-anima" id="tab-anima">
+                    ✦ Percorsi dell'Anima
+                </button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-corpo" id="tab-corpo">
+                    ◈ Benessere del Corpo
+                </button>
 
-            <div class="card-grid">
-                <article class="card fade-in">
-                    <div class="card-img">
-                        <img src="img/cane_ritratto.jpg" alt="Meditazione" />
+                <!-- PANNELLO 1 — Anima -->
+                 <div class="tab-panel" id="panel-anima" role="tab-panel" aria-labelledby="tab-anima">
+                    <div class="card-grid">
+                        <article class="card fade-in">
+                            <div class="card-img">
+                                <img src="img/" alt="Meditazione" />
+                            </div>
+                            <h3>Meditazione</h3>
+                            <p>Descrizione servizio 1</p>
+                            <div class="card-number">01</div>
+                        </article>
+
+                        <article class="card fade-in">
+                            <div class="card-img">
+                                <img src="img/" alt="Lettura dei tarocchi" />
+                            </div>
+                            <h3>Lettura dei tarocchi</h3>
+                            <p>Descrizione servizio 2</p>
+                            <div class="card-number">02</div>
+                        </article>
+
+                        <article class="card fade-in">
+                            <div class="card-img">
+                                <img src="img/" alt="Naturopatia" />
+                            </div>
+                            <h3>Naturopatia</h3>
+                            <p>Descrizione servizio 3</p>
+                            <div class="card-number">03</div>
+                        </article>
                     </div>
-                    <h3>Meditazione</h3>
-                    <p>Descrizione servizio 1</p>
+                 </div>
+
+                 <!-- PANNELLO 2 — Corpo -->
+                 <div class="tab-panel hidden" id="panel-corpo" role="tabpanel" aria-labelledby="tab-corpo">
+            <div class="card-grid">
+
+                <article class="card card--corpo fade-in">
+                    <div class="card-img">
+                        <img src="img/cane_ritratto.jpg" alt="Massaggi" />
+                    </div>
+                    <h3>Massaggi</h3>
+                    <p>Descrizione massaggi — beneficio per il cliente.</p>
                     <div class="card-number">01</div>
                 </article>
-            <article class="card fade-in">
-                        <div class="card-img">
-                            <img src="img/cane_ritratto.jpg" alt="Lettura dei Tarocchi" />
-                        </div>
-                        <h3>Lettura dei Tarocchi</h3>
-                        <p>Descrizione servizio 2 — spiega il beneficio per il cliente,
-                           non solo cosa fai.</p>
-                        <div class="card-number">02</div>
-                    </article>
- 
-                    <article class="card fade-in">
-                        <div class="card-img">
-                            <img src="img/cane_ritratto.jpg" alt="Naturopatia" />
-                        </div>
-                        <h3>Naturopatia</h3>
-                        <p>Descrizione servizio 3 — spiega il beneficio per il cliente,
-                           non solo cosa fai.</p>
-                        <div class="card-number">03</div>
+
+                <article class="card card--corpo fade-in">
+                    <div class="card-img">
+                        <img src="img/cane_ritratto.jpg" alt="Applicazione Tape" />
+                    </div>
+                    <h3>Applicazione Tape</h3>
+                    <p>Descrizione taping — beneficio per il cliente.</p>
+                    <div class="card-number">02</div>
                 </article>
-            </div>
+
+                <!-- Aggiungi altri servizi corpo qui -->
+
+             </div>
         </div>
     </section>
 
