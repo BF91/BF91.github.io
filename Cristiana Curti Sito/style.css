@@ -8,8 +8,8 @@
     --clr-border:      rgba(212,188,140,.18);
     --clr-gold:        #c9a96e;
     --clr-gold-light:  #e2c99a;
-    --clr-sage:        #7d9b82;
-    --clr-sage-light:  #a3bfa8;
+    --clr-sage:        #10b981;
+    --clr-sage-light:  #34d399;
     --clr-amethyst:    #8b5cf6;
     --clr-amethyst-h:  #a78bfa;
     --clr-text:        #ede8de;
@@ -559,7 +559,7 @@ em { color: var(--clr-gold); font-style: italic; }
     background: var(--clr-sage);
     border-color: var(--clr-sage);
     color: var(--clr-bg);
-    box-shadow: 0 4px 20px rgba(125,155,130,.4);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, .45);
 }
 
 .tab-panel { animation: fadePanel .4s ease; }
