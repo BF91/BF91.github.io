@@ -4,254 +4,281 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- SEO base -->
     <title>Cristiana Curti</title>
-    <meta name="description" content="Descrizione del sito in 150-160 caratteri per i motori di ricerca." />
+    <meta name="description" content="Meditazione, Tarocchi e Naturopatia a Milano." />
     <meta name="author" content="BDFurlan" />
-
-    <!-- Open Graph (anteprima su social: WhatsApp, Facebook, LinkedIn…) -->
     <meta property="og:title"       content="Cristiana Curti" />
     <meta property="og:description" content="Meditazione, Tarocchi e Naturopatia" />
     <meta property="og:image"       content="https://tuosito.com/img/og-cover.jpg" />
     <meta property="og:url"         content="https://tuosito.com/" />
     <meta property="og:type"        content="website" />
-
-    <!-- Favicon (metti i file nella cartella /img) -->
     <link rel="icon"             href="/img/favicon.ico" />
-    <link rel="icon"             href="/img/favicon.svg"   type="image/svg+xml" />
+    <link rel="icon"             href="/img/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-
-    <!-- Font Google (caricamento ottimizzato 2026) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- HEADER -->
     <header class="site-header" id="site-header">
         <div class="container">
             <div class="nav-inner">
-                <a href="/" class="nav-logo">Cristiana Curti<!--Nome Sito--></a>
 
-                <!-- Hamburger (visibile solo su mobile) -->
-            <button class="nav-toggle" id="nav-toggle"
-                aria-controls="nav-links"
-                aria-expanded="false"
-                aria-label="Apri menu">
-                <span></span><span></span><span></span>
-            </button>
+                <a href="/" class="nav-logo">Cristiana Curti</a>
 
-            <!-- Link navigazione -->
-            <nav class="nav-links" id="nav-links" aria-label="Menu principale">
-                <a href="#contatti">Contatti</a>
-                <a href="#chi-sono">Chi sono</a>
-                <div class="nav-drop-down">
-                    <button class="nav-drop-down-toggle" aria-expanded="false" aria-haspopup="true">
-                        Servizi<span class="nav-drop-down-arrow">▾</span>
-                    </button>
-                    <div class="nav-dropdown-menu" role="menu">
-                        <a href="#servizi" data-tab="panel-anima" role="menuitem">✦ Percorsi dell'Anima</a>
-                        <a href="#servizi" data-tab="panel-corpo" role="menuitem">◈ Benessere del Corpo</a>
+                <button class="nav-toggle" id="nav-toggle"
+                    aria-controls="nav-links"
+                    aria-expanded="false"
+                    aria-label="Apri menu">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <nav class="nav-links" id="nav-links" aria-label="Menu principale">
+                    <a href="#chi-sono">Chi sono</a>
+
+                    <!-- DROPDOWN SERVIZI -->
+                    <div class="nav-dropdown" id="nav-dropdown-servizi">
+                        <button class="nav-dropdown-toggle"
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            aria-controls="dropdown-menu-servizi">
+                            Servizi <span class="nav-dropdown-arrow">▾</span>
+                        </button>
+                        <div class="nav-dropdown-menu" id="dropdown-menu-servizi" role="menu">
+                            <a href="#servizi" data-tab="panel-anima" role="menuitem">✦ Percorsi dell'Anima</a>
+                            <a href="#servizi" data-tab="panel-corpo" role="menuitem">◈ Benessere del Corpo</a>
+                        </div>
                     </div>
-                </div>
-                <a href="#testimonianze">Testimonianze</a>
-                <a href="#contatti" class="nav-cta">Inizia ora →</a>
-            </nav>
+
+                    <a href="#testimonianze">Testimonianze</a>
+                    <a href="#contatti">Contatti</a>
+                    <a href="#contatti" class="nav-cta">Inizia ora →</a>
+                </nav>
+
             </div>
         </div>
     </header>
+
     <main>
-    <section class="hero" aria-labelledby="hero-title">
-        <div class="container">
 
-        <span class="hero-eyebrow">La tua frase breve memorabile di impatto!</span>
-        <h1 id="hero-title">Titolo Sito<br>
-            <span>Sotto titolo</span>
-        </h1>
-        
-        <p>La tua frase breve memorabile di impatto — descrivi in una riga cosa offri e a chi ti rivolgi</p>
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <span class="hero-eyebrow">La tua frase breve memorabile di impatto!</span>
+                <h1 id="hero-title">Titolo Sito<br>
+                    <span>Sotto titolo</span>
+                </h1>
+                <p>La tua frase breve memorabile di impatto — descrivi in una riga cosa offri e a chi ti rivolgi</p>
+                <div class="hero-actions">
+                    <a href="#contatti" class="btn-primary">Contattami</a>
+                    <a href="#servizi"  class="btn-outline">Scopri i servizi</a>
+                </div>
 
-        <div class="hero-actions">
-          <a href="#contatti"  class="btn-primary">Contattami</a>
-          <a href="#servizi"   class="btn-outline">Scopri i servizi</a>
-        </div>
-        </div>
-    </section>
+                <!-- ANTEPRIMA SERVIZI in Hero -->
+                <div class="hero-services-preview">
+                    <button class="hero-preview-btn" data-tab="panel-anima">
+                        <span class="preview-icon">✦</span>
+                        <span class="preview-label">Percorsi dell'Anima</span>
+                        <span class="preview-sub">Meditazione · Tarocchi</span>
+                    </button>
+                    <div class="preview-divider"></div>
+                    <button class="hero-preview-btn" data-tab="panel-corpo">
+                        <span class="preview-icon">◈</span>
+                        <span class="preview-label">Benessere del Corpo</span>
+                        <span class="preview-sub">Massaggi · Naturopatia · Tape</span>
+                    </button>
+                </div>
 
-    <!-- SERVIZI -->
-    <section class="section" id="servizi" aria-labelledby="servizi-title">
-        <div class="container">
-            <header class="section-header center fade-in">
-                <span class="section-label">Cosa faccio</span>
-                <h2 class="section-title" id="servizi-title">I miei servizi</h2>
-                <p class="section-lead">Percorsi su misura per il tuo benessere - dell'anima e del corpo</p>
-            </header>
-            <!-- TAB SWITCHER -->
-             <div class="services-tab fade-in" role="tablist" aria-label="Categorie servizi">
-                <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-anima" id="tab-anima">
-                    ✦ Percorsi dell'Anima
-                </button>
-                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-corpo" id="tab-corpo">
-                    ◈ Benessere del Corpo
-                </button>
+            </div>
+        </section>
 
-                <!-- PANNELLO 1 — Anima -->
-                 <div class="tab-panel" id="panel-anima" role="tab-panel" aria-labelledby="tab-anima">
+        <!-- SERVIZI -->
+        <section class="section" id="servizi" aria-labelledby="servizi-title">
+            <div class="container">
+
+                <header class="section-header center fade-in">
+                    <span class="section-label">Cosa faccio</span>
+                    <h2 class="section-title" id="servizi-title">I miei servizi</h2>
+                    <p class="section-lead">Percorsi su misura per il tuo benessere — dell'anima e del corpo.</p>
+                </header>
+
+                <!-- TAB SWITCHER -->
+                <div class="services-tabs fade-in" role="tablist" aria-label="Categorie servizi">
+                    <button class="tab-btn active" role="tab"
+                        aria-selected="true"
+                        aria-controls="panel-anima"
+                        id="tab-anima">
+                        ✦ Percorsi dell'Anima
+                    </button>
+                    <button class="tab-btn" role="tab"
+                        aria-selected="false"
+                        aria-controls="panel-corpo"
+                        id="tab-corpo">
+                        ◈ Benessere del Corpo
+                    </button>
+                </div>
+
+                <!-- PANNELLO ANIMA -->
+                <div class="tab-panel" id="panel-anima" role="tabpanel" aria-labelledby="tab-anima">
                     <div class="card-grid">
+
                         <article class="card fade-in">
                             <div class="card-img">
-                                <img src="img/" alt="Meditazione" />
+                                <img src="img/cane_ritratto.jpg" alt="Meditazione" />
                             </div>
                             <h3>Meditazione</h3>
-                            <p>Descrizione servizio 1</p>
+                            <p>Descrizione servizio — spiega il beneficio per il cliente.</p>
                             <div class="card-number">01</div>
                         </article>
 
                         <article class="card fade-in">
                             <div class="card-img">
-                                <img src="img/" alt="Lettura dei tarocchi" />
+                                <img src="img/cane_ritratto.jpg" alt="Lettura dei Tarocchi" />
                             </div>
-                            <h3>Lettura dei tarocchi</h3>
-                            <p>Descrizione servizio 2</p>
+                            <h3>Lettura dei Tarocchi</h3>
+                            <p>Descrizione servizio — spiega il beneficio per il cliente.</p>
                             <div class="card-number">02</div>
                         </article>
 
-                        <article class="card fade-in">
-                            <div class="card-img">
-                                <img src="img/" alt="Naturopatia" />
-                            </div>
-                            <h3>Naturopatia</h3>
-                            <p>Descrizione servizio 3</p>
-                            <div class="card-number">03</div>
-                        </article>
                     </div>
-                 </div>
-
-                 <!-- PANNELLO 2 — Corpo -->
-                 <div class="tab-panel hidden" id="panel-corpo" role="tabpanel" aria-labelledby="tab-corpo">
-            <div class="card-grid">
-
-                <article class="card card--corpo fade-in">
-                    <div class="card-img">
-                        <img src="img/cane_ritratto.jpg" alt="Massaggi" />
-                    </div>
-                    <h3>Massaggi</h3>
-                    <p>Descrizione massaggi — beneficio per il cliente.</p>
-                    <div class="card-number">01</div>
-                </article>
-
-                <article class="card card--corpo fade-in">
-                    <div class="card-img">
-                        <img src="img/cane_ritratto.jpg" alt="Applicazione Tape" />
-                    </div>
-                    <h3>Applicazione Tape</h3>
-                    <p>Descrizione taping — beneficio per il cliente.</p>
-                    <div class="card-number">02</div>
-                </article>
-
-                <!-- Aggiungi altri servizi corpo qui -->
-
-             </div>
-        </div>
-    </section>
-
-<!-- CHI SONO - presentazione  (2 colonne) -->
-    <section class="section section--alt" id="chi-sono" aria-labelledby="chi-sono-title">
-        <div class="container">
-
-            <div class="two-col fade-in">
-
-                <div class="two-col-img">
-                    <img src="img/cane_ritratto.jpg" alt="ritratto cane">
                 </div>
 
-            <div class="two-col-text">
-                <span class="section-label">Chi sono</span>
-                <h2 class="section-title" id="chi-sono-title">la mia storia in breve</h2>
-                <p>TESTO</p>
-                    <ul>
-                        <li>Punto di forza o qualifica numero uno</li>
-                        <li>Punto di forza o qualifica numero due</li>
-                        <li>Punto di forza o qualifica numero tre</li>
-                    </ul>
-                <a href="#contatti" class="btn-primary">Contattami</a>
+                <!-- PANNELLO CORPO -->
+                <div class="tab-panel hidden" id="panel-corpo" role="tabpanel" aria-labelledby="tab-corpo">
+                    <div class="card-grid">
+
+                        <article class="card card--corpo fade-in">
+                            <div class="card-img">
+                                <img src="img/cane_ritratto.jpg" alt="Massaggi" />
+                            </div>
+                            <h3>Massaggi</h3>
+                            <p>Descrizione servizio — spiega il beneficio per il cliente.</p>
+                            <div class="card-number">01</div>
+                        </article>
+
+                        <article class="card card--corpo fade-in">
+                            <div class="card-img">
+                                <img src="img/cane_ritratto.jpg" alt="Naturopatia" />
+                            </div>
+                            <h3>Naturopatia</h3>
+                            <p>Descrizione servizio — spiega il beneficio per il cliente.</p>
+                            <div class="card-number">02</div>
+                        </article>
+
+                        <article class="card card--corpo fade-in">
+                            <div class="card-img">
+                                <img src="img/cane_ritratto.jpg" alt="Applicazione Tape" />
+                            </div>
+                            <h3>Applicazione Tape</h3>
+                            <p>Descrizione servizio — spiega il beneficio per il cliente.</p>
+                            <div class="card-number">03</div>
+                        </article>
+
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- CHI SONO -->
+        <section class="section section--alt" id="chi-sono" aria-labelledby="chi-sono-title">
+            <div class="container">
+                <div class="two-col fade-in">
 
-    <!-- TESTIMONIANZE/RECENSIONI -->
-    <section class="section" id="testimonianze" aria-labelledby="testi-title">
-        <div class="container">
+                    <div class="two-col-img">
+                        <img src="img/cane_ritratto.jpg" alt="Cristiana Curti">
+                    </div>
 
-            <header class="section-header center fade-in">
-                <span class="section-label">Come dicono di me</span>
-                <h2 class="section-title" id="testi-title">Testimonianze</h2>
-            </header>
+                    <div class="two-col-text">
+                        <span class="section-label">Chi sono</span>
+                        <h2 class="section-title" id="chi-sono-title">La mia storia in breve</h2>
+                        <p>TESTO</p>
+                        <ul>
+                            <li>Punto di forza o qualifica numero uno</li>
+                            <li>Punto di forza o qualifica numero due</li>
+                            <li>Punto di forza o qualifica numero tre</li>
+                        </ul>
+                        <a href="#contatti" class="btn-primary">Contattami</a>
+                    </div>
 
-            <div class="testimonials-grid">
-
-                <blockquote class="testimonial fade-in">
-                    <p class="testimonial-quote">"Descrizione esperienza e testimonianza positiva"</p>
-                    <footer class="testimonial-author">
-                        <div class="testimonial-avatar" aria-hidden="true">MR</div>
-                        <div>
-                            <div class="testimonial-name">Mario Rossi</div>
-                            <div class="testimonial-role">Lettura Tarocchi</div>
-                        </div>
-                    </footer>
-                </blockquote>
-
-                <blockquote class="testimonial fade-in">
-                    <p class="testimonial-quote">"Descrizione esperienza e testimonianza positiva"</p>
-                    <footer class="testimonial-author">
-                        <div class="testimonial-avatar" aria-hidden="true">BS</div>
-                        <div>
-                            <div class="testimonial-name">Bianchi Sara</div>
-                            <div class="testimonial-role">Meditazione Corporea</div>
-                        </div>
-                    </footer>
-                </blockquote>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-     <!-- CTA BANNER (?) -->
-    <section class="section" id="contatti" aria-labelledby="cta-title">
+        <!-- TESTIMONIANZE -->
+        <section class="section" id="testimonianze" aria-labelledby="testi-title">
+            <div class="container">
 
-        <div class="container">
-            <div class="cta-banner fade-in">
-                <h2 id="cta-title">Pronti per iniziare?</h2>
-                <p>TESTO ACCATTIVANTE</p>
-                <a href="mailto:info@???.com" class="btn-primary">Scrivici una mail</a>
+                <header class="section-header center fade-in">
+                    <span class="section-label">Come dicono di me</span>
+                    <h2 class="section-title" id="testi-title">Testimonianze</h2>
+                </header>
+
+                <div class="testimonials-grid">
+
+                    <blockquote class="testimonial fade-in">
+                        <p class="testimonial-quote">"Descrizione esperienza e testimonianza positiva"</p>
+                        <footer class="testimonial-author">
+                            <div class="testimonial-avatar" aria-hidden="true">MR</div>
+                            <div>
+                                <div class="testimonial-name">Mario Rossi</div>
+                                <div class="testimonial-role">Lettura Tarocchi</div>
+                            </div>
+                        </footer>
+                    </blockquote>
+
+                    <blockquote class="testimonial fade-in">
+                        <p class="testimonial-quote">"Descrizione esperienza e testimonianza positiva"</p>
+                        <footer class="testimonial-author">
+                            <div class="testimonial-avatar" aria-hidden="true">BS</div>
+                            <div>
+                                <div class="testimonial-name">Bianchi Sara</div>
+                                <div class="testimonial-role">Meditazione Corporea</div>
+                            </div>
+                        </footer>
+                    </blockquote>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- CONTATTI / CTA -->
+        <section class="section" id="contatti" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-banner fade-in">
+                    <h2 id="cta-title">Pronti per iniziare?</h2>
+                    <p>TESTO ACCATTIVANTE</p>
+                    <a href="mailto:info@???.com" class="btn-primary">Scrivici una mail</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
-
-         <div class="container">
-
+        <div class="container">
             <div class="footer-grid">
 
-            <div class="footer-brand">
-            <span class="nav-logo">Cristiana Curti</span>
-            <p>Una frase breve che descrive la tua attività o il tuo valore principale. Oppure "Slogan".</p>
-            </div>
-            <div class="footer-col">
-                <h4>Navigazione</h4>
-                <ul>
-                    <li><a href="#servizi">Servizi</a></li>
-                    <li><a href="#chi-sono">Chi sono</a></li>
-                    <li><a href="#testimonianze">Testimonianze</a></li>
-                    <li><a href="#contatti">Contatti</a></li>
-                </ul>
-            </div>
+                <div class="footer-brand">
+                    <span class="nav-logo">Cristiana Curti</span>
+                    <p>Una frase breve che descrive la tua attività o il tuo valore principale.</p>
+                </div>
 
-            <div class="footer-col">
+                <div class="footer-col">
+                    <h4>Navigazione</h4>
+                    <ul>
+                        <li><a href="#servizi">Servizi</a></li>
+                        <li><a href="#chi-sono">Chi sono</a></li>
+                        <li><a href="#testimonianze">Testimonianze</a></li>
+                        <li><a href="#contatti">Contatti</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
                     <h4>Legale</h4>
                     <ul>
                         <li><a href="/privacy">Privacy Policy</a></li>
@@ -259,22 +286,27 @@
                     </ul>
                 </div>
 
-            <div class="footer-col">
-                <h4>Contattami</h4>
-                <ul>
-                    <li><a href="tel:00393489160435">+39 348 9160435</a></li>
-                    <li><a href="mailto:info@???.com">info@???.com</a></li>
-                    <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
-                    <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
-                </ul>
-            </div>
+                <div class="footer-col">
+                    <h4>Contattami</h4>
+                    <ul>
+                        <li><a href="tel:00393489160435">+39 348 9160435</a></li>
+                        <li><a href="mailto:info@???.com">info@???.com</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+                    </ul>
+                </div>
+
             </div>
             <div class="footer-bottom">
                 <span>© 2026 Cristiana Curti. Tutti i diritti riservati.</span>
                 <span>Realizzato da BDFurlan</span>
             </div>
-         </div>
+        </div>
     </footer>
+
+    <!-- TORNA SU -->
+    <button class="back-to-top" id="back-to-top" aria-label="Torna in cima">↑</button>
+
     <script src="script.js"></script>
 </body>
 </html>
