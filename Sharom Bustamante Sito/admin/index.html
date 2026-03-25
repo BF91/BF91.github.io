@@ -646,7 +646,30 @@
                     }
 
                 //RIORDINA DRAG & DROP
-                    
+                    function dragStart(e, idx) {
+                        dragSrc = idx;
+                        e.currentTarget.classList.add('dragging');
+                    }
+                    function dragOver(e) {
+                        e.prevetDefault();
+                    }
+                    fucntion dropOn(e, idx) {
+                        e.preventDefault();
+                        if (dragSrc === null || dragSrc === idx) return;
+                        const moved = artworks.splice(dragSrc, 1)[0];
+                        asrtworks.splice(idx, 0, moved);
+                        dragSrc = null;
+                        renderGallery();
+                    //Salva nuovo ordine su server
+                        fetch('../admin/upload.php?action=reorder', {
+                            method: 'POST',
+                            headers: authHeaders({ 'Content-Type': 'application/json' }),
+                            body: JSON.stringify({ order: artworks.map(a => a.id) })
+                        });
+                    }
+                    function dragEnd(e) { e.currentTarget.classList.remove('dragging');}
+
+                // TOAST
 
                 }
 
