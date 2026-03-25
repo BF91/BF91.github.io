@@ -361,11 +361,6 @@
             .toast.show {
                 opacity: 1;
             }
-            @media (max-width: 500px) {
-                header { padding: 1rem; }
-                main { padding: 1rem; }
-                .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));}
-            }
         </style>
     </head>
     <body>
@@ -376,7 +371,7 @@
                 <h1>Admin panel</h1>
                 <p>Shannon J. Hermes - accesso riservato</p>
                 <label for="psw-input">Password</label>
-                <input type="password" id="pwd-input" placeholder="Password" onkeydown="if(event.key==='Enter')login()">
+                <input type="password" id="pwd-input" placeholder="Password" onkeydown="if(event.key==='Enter') login()">
                 <button onclick="login()">Accedi</button>
                 <p class="error-msg" id="error-msg">Password errata. Riprova.</p>
             </div>
@@ -392,20 +387,20 @@
                 <div class="tabs">
                     <button class="tab active" onclick="switchTab('upload', this)">Carica Opera</button>
                     <button class="tab" onclick="switchTab('gallery', this)">Galleria
-                    <span class="badge" id="count-badge">0</span></button>
+                    <span class="badge" id="count-badge">—</span></button>
                 </div>
 
              <!-- UPLOAD -->
                 <div id="panel-upload" class="panel active">
                     <div class="card">
-                        <label>Immagine</label>
+                        <label>Immagine *</label>
                         <div class="drop-zone" id="drop-zone">
                             <input type="file" id="file-input" accept="image/*" onchange="handleFile(this.files[0])">
                             <img id="preview" alt="anteprima">
                             <p class="drop-label" id="drop-label">Trascina qui l'immagine o clicca per selezionarla</p>
                             <p class="drop-hint" id="drop-hint">JPG - PNG - GIF - WEBP</p>
                         </div>
-                        <label>Titolo *</label>
+                        <label style="margin-top:1rem">Titolo *</label></label>
                         <input type="text" id="title-input" placeholder="Titolo Opera">
                         <label>Note o descrizione <span class="optional">(opzionale)</span></label>
                         <textarea id="notes-input" placeholder="Es. Tavola originale..."></textarea>
@@ -415,13 +410,119 @@
                         </div>
                     </div>
                 </div>
-                
-             <!-- GALLERY -->
-                
 
+             <!-- GALLERY -->
+                <div id="panel-gallery" class="panel">
+                    <div id="gallery" class="gallery"></div>
+                    <div id="empty" class="empty" style="display:none">Nessuna opera caricata ancora</div>
+                </div>
             </main>
         </div>
 
+     <!-- MODAL EDIT -->
+        <div class="modal-bg" id="modal-bg">
+            <div class="modal">
+                <h2>Modifica opera</h2>
+                <input type="hidden" id="edit-id">
+                <label>Titolo *</label>
+                <input type="text" id="edit-id">
+                <label>Note o descrizione <span class="optional">(opzionale)</span></label>
+                <textarea id="edit-notes"></textarea>
+                <div class="btn-row">
+                    <button class="secondary" onclick="closeModal()">Annulla</button>
+                    <button class="primary" onclick="saveEdit()">Salva modifiche</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast" id="toast">
+            <script>
+
+             // CAMBIA PASWORD
+                const ADMIN_PASSWORD = 'hermes123';
+
+                let artworks = [];
+                let currentFile = null;
+                let dragSrc = null;
+
+             // LOGIN
+                function login() {
+                    const val = document.getElementByID('pwd-input').value;
+                    if (val === ADMIN_PASSWORD) {
+                        sessionStorage.setItem('hermes_admin_pwd', val);
+                        showAdmin();
+                } else {
+                    document.getElementById('error-msg').style.display = 'block';
+                }
+            }
+            function logout() {
+                sessionStorage.removeItem('hermes_admin_pwd');
+                location.reload();
+            }
+            function showAdmin() {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('admin-screen').style.display = 'block';
+                localGallery();
+            }
+            if (sessionStorage.getItem('hermes_admin_pwd') === ADMIN_PASSWORD showAdmin();
+        // HEADER con pwd per ogni chiamata al server
+            function authHeaders(extra) {
+                return Object.assign({ 'X-Admin-Password': sessionSorage.getItem('hermes_admin_pwd')}, extra);
+            }
+        // TABS
+            function switchTab(tab, btn) {
+                document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+                btn.clasList.add('active');
+                document.getElementById('panel-' + teb).classList.add('active');
+                if (tab === 'gallery') renderGallery();
+            }
+
+        // UPLOAD FILE
+            function handleFile(file) {
+                if (!file) return;
+                currentFile = file;
+                const reader = new FileReader();
+                reader.onload = e => {
+                    const prev = document.getElementById('preview');
+                    prev.src = e.target.result;
+                    prev.style.display = 'block';
+                    document.getElementById('drop-label').style.display = 'none';
+                    document.getElementById('drop-hint').style.display = 'none';
+                    document.getElementById('drop-zone').classList.add('has-img');
+                };
+                reader.readAsDataURL(file);
+            }
+
+            const dz = document.getElementById('drop-zone');
+            dz.addEventListener('dragover', e => { e.preventDefault(); dz.style.background = '#fafafa'; });
+            dz.addEventListener('drop', e => { e.preventDefault(); dz.style.background = ''; handleFile(e.dataTransfer.files[0]); });
+
+            function resetForm() {
+                currentFile = null;
+                document.getElementById('file-input').value = '';
+                document.getElementById('title-input').value = '';
+                document.getElementById('notes-input').value = '';
+                const prev = document.getElementById('preview');
+                prev.style.display = 'none';
+                prev.src = '';
+                document.getElementById('drop-label').style.display = '';
+                document.getElementByyId('drop-hint').style.display = '';
+                document.getElementById('drop-zone').classList.remove('has-img');
+                document.getElementById('progress-bar').style.display = 'none';
+                document.getElementById('progress-fill').style.width = '0';
+            }
+
+        //SALVA OPERA su Server
+            
+
+
+
+
+        )
+
+            </script>
+        </div>
 
     </body>
 </html>
