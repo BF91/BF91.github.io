@@ -369,7 +369,7 @@
         </style>
     </head>
     <body>
-
+ 
      <!-- LOGIN -->
         <div id=""login-screen">
             <div class="login-card">
@@ -383,7 +383,44 @@
         </div>
 
      <!-- ADMIN -->
-        
+        <div id="admin-screen">
+            <header>
+                <h1>Admin - Shannon J. Hermes</h1>
+                <button onclick="logout()">Esci</button>
+            </header>
+            <main>
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('upload', this)">Carica Opera</button>
+                    <button class="tab" onclick="switchTab('gallery', this)">Galleria
+                    <span class="badge" id="count-badge">0</span></button>
+                </div>
+
+             <!-- UPLOAD -->
+                <div id="panel-upload" class="panel active">
+                    <div class="card">
+                        <label>Immagine</label>
+                        <div class="drop-zone" id="drop-zone">
+                            <input type="file" id="file-input" accept="image/*" onchange="handleFile(this.files[0])">
+                            <img id="preview" alt="anteprima">
+                            <p class="drop-label" id="drop-label">Trascina qui l'immagine o clicca per selezionarla</p>
+                            <p class="drop-hint" id="drop-hint">JPG - PNG - GIF - WEBP</p>
+                        </div>
+                        <label>Titolo *</label>
+                        <input type="text" id="title-input" placeholder="Titolo Opera">
+                        <label>Note o descrizione <span class="optional">(opzionale)</span></label>
+                        <textarea id="notes-input" placeholder="Es. Tavola originale..."></textarea>
+                        <div class="btn-row">
+                            <button class="secondary" onclick="resetForm()">Annulla</button>
+                            <button class="primary" onclick="saveArtwork()">Salva</button>
+                        </div>
+                    </div>
+                </div>
+                
+             <!-- GALLERY -->
+                
+
+            </main>
+        </div>
 
 
     </body>
