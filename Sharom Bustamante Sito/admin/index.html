@@ -609,7 +609,46 @@
                 }    
 
                 // MODIFICA
-                
+                function openEdit(id) {
+                    const a = artworks.find(x => x.id === id);
+                    if (!a) return;
+                    document.getElementById('edit-id').value = id;
+                    document.getElementById('edit-title').value = a.title;
+                    document.getElementById('edit-notes').value = a.notes || '';
+                    document.getElementById('modal-bg').classList.add('open');
+                }
+                function closeModal() {
+                    document.getElementById('modal-bg').classList.remove('open');
+                }
+                function closeModal() {
+                    document.getElementById('modal-bg').classList.remove('open');
+                    function saveEdit() {
+                        const id = parseInt(document.getElementById('edit-id').value);
+                        const title = document.getElementById('edit-title').value.trim();
+                        cosnt notes = document.getElementById('edit-notes').value.trim();
+                        if (!title) {
+                            toast('Inserisci un titolo');
+                            return;
+                        }
+                        fetch('../admin/upload.php?action=edit', {
+                            method: 'POST',
+                            headers: authHeaders({ 'Content-Type': 'application/json'}),
+                            body: JSON.stringify({ id, title, notes })
+                        })
+                        .then(r => r.json())
+                        .then(res => {
+                            if (res.ok) {
+                                toast('Modifiche salvate');
+                                closeModal();
+                                loadGallery();
+                            } else toast('Errore: ' + res.error);
+                        });
+                    }
+
+                //RIORDINA DRAG & DROP
+                    
+
+                }
 
 
             }
