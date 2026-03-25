@@ -114,7 +114,7 @@
                 gap: 8px;
                 margin-bottom: 1.5rem;
             }
-            /* RIPRENDO DA TAB {} */
+            
             .tab {
                 padding: 8px 10px;
                 border-radius: 8px;
@@ -366,7 +366,7 @@
     <body>
  
      <!-- LOGIN -->
-        <div id=""login-screen">
+        <div id = "login-screen">
             <div class="login-card">
                 <h1>Admin panel</h1>
                 <p>Shannon J. Hermes - accesso riservato</p>
@@ -435,7 +435,7 @@
             </div>
         </div>
 
-        <div class="toast" id="toast">
+        <div class="toast" id="toast"></div>
             <script>
 
              // CAMBIA PASWORD
@@ -464,7 +464,7 @@
                 document.getElementById('admin-screen').style.display = 'block';
                 localGallery();
             }
-            if (sessionStorage.getItem('hermes_admin_pwd') === ADMIN_PASSWORD showAdmin();
+            if (sessionStorage.getItem('hermes_admin_pwd') === ADMIN_PASSWORD) showAdmin();
         // HEADER con pwd per ogni chiamata al server
             function authHeaders(extra) {
                 return Object.assign({ 'X-Admin-Password': sessionSorage.getItem('hermes_admin_pwd')}, extra);
@@ -496,7 +496,8 @@
 
             const dz = document.getElementById('drop-zone');
             dz.addEventListener('dragover', e => { e.preventDefault(); dz.style.background = '#fafafa'; });
-            dz.addEventListener('drop', e => { e.preventDefault(); dz.style.background = ''; handleFile(e.dataTransfer.files[0]); });
+            dz.addEventListener('drop', e => { e.preventDefault(); dz.style.background = ''; handleFile(e.dataTransfer.files[0]);
+            });
 
             function resetForm() {
                 currentFile = null;
@@ -555,6 +556,7 @@
                     toast('Errore di rete');
                 };
                 xhr.send(fd);
+            }
 
             // CARICA GALLERIA DAL SERVER
                 function loadGallery() {
@@ -621,11 +623,11 @@
                     document.getElementById('modal-bg').classList.remove('open');
                 }
                 function closeModal() {
-                    document.getElementById('modal-bg').classList.remove('open');
+                    document.getElementById('modal-bg').classList.remove('open'); }
                     function saveEdit() {
                         const id = parseInt(document.getElementById('edit-id').value);
                         const title = document.getElementById('edit-title').value.trim();
-                        cosnt notes = document.getElementById('edit-notes').value.trim();
+                        const notes = document.getElementById('edit-notes').value.trim();
                         if (!title) {
                             toast('Inserisci un titolo');
                             return;
@@ -653,7 +655,7 @@
                     function dragOver(e) {
                         e.prevetDefault();
                     }
-                    fucntion dropOn(e, idx) {
+                    function dropOn(e, idx) {
                         e.preventDefault();
                         if (dragSrc === null || dragSrc === idx) return;
                         const moved = artworks.splice(dragSrc, 1)[0];
@@ -670,19 +672,12 @@
                     function dragEnd(e) { e.currentTarget.classList.remove('dragging');}
 
                 // TOAST
-
-                }
-
-
-            }
-
-
-
-
-        )
-
-            </script>
-        </div>
-
+                    function toast(msg) {
+                        const t = document.getElementById('toast');
+                        t.textContent = msg;
+                        t.classList.add('show');
+                        setTimout(() => t.classList.remove('show'), 2400);
+                    }
+         </script>
     </body>
 </html>
