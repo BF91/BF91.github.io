@@ -557,7 +557,61 @@
                 xhr.send(fd);
 
             // CARICA GALLERIA DAL SERVER
+                function loadGallery() {
+                    fetch('../api/artworks.php')
+                        .then(r => t.json())
+                        .then(data => {
+                            artworks = data;
+                            document.getElementById('count-badge').textContent = artworks.length;
+                            renderGallery();
+                        })
+                        .catch(() => toast('Errore nel caricamento galleria'));
+                }
+
+                function renderGallery() {
+                    const g = document.getElementById('gallery');
+                    const em = document.getElementById('empty');
+                    if (!artworks.length) { g.innerHTML = '';
+                        em.style.display = 'block';
+                        return;
+                    }
+                    em.style.display = 'none';
+                    g.innerHTML = artworks.map((a, i) => `
+          <div class="art-card" draggable="true" data-idx="${i}"
+               ondragstart="dragStart(event,${i})" ondragover="dragOver(event)"
+               ondrop="dropOn(event,${i})" ondragend="dragEnd(event)">
+            <img src="${a.image_path}" alt="${a.title}">
+            <div class="art-info">
+              <div class="art-title">${a.title}</div>
+              ${a.notes ? `<div class="art-note">${a.notes}</div>` : ''}
+              <div class="art-actions">
+                <button class="edit-btn" onclick="openEdit(${a,id})">Modifica</button>
+                <button class="danger" onclick="deleteArtwork(${a,id})">Elimina</button>
+                </div>
+                </div>
+                </div>`).join('');
+                }
+
+            // ELIMINA
+                function deleteArtwork(id) {
+                    if (!confirm('Elimina questa opera?')) return;
+                    fetch('../admin/upload.php?action=delete', {
+                        method: 'POST',
+                        headers: authHeaders({ 'Content-Type': 'application/json' }),
+                        body: JSON.stringify({ id })
+                    })
+                    .then(r => r.json())
+                    .then(res => {
+                        if (res.ok) { toast('Opera eliminata');
+                            loadGallery();
+                        } else toast('Error: ' + res.error);
+                    });
+                }    
+
+                // MODIFICA
                 
+
+
             }
 
 
