@@ -1,7 +1,7 @@
 <?php
 /**
  * db_config.php
- * Modifica questi valori con quelli che trovi in cPanel > Database MySQL
+ * Modificare questi valori con quelli che trovi in cPanel > Database MySQL
  */
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'il_tuo_database');   // es. tuoaccount_hermes
