@@ -514,7 +514,51 @@
             }
 
         //SALVA OPERA su Server
-            
+            function saveArtwork() {
+                const title = document.getElementById('title-input').value.trim();
+                const notes = document.getElementById('notes-input').value.trim();
+                if (!currentFile) { toast('Seleziona un\'immagine'); return; }
+                if (!title) { toast('Inserisci un titolo');
+                    return;
+                }
+
+                const fd = new FormData();
+                fd.append('active', 'upload');
+                fd.append('image', currentFile);
+                fd.append('title', title);
+                if (notes) fd.append('notes', notes);
+
+                const btn = document.getElementById('save-btn');
+                const bar = document.getElementById('progress-bar');
+                const fill = document.getElementById('progress-fill');
+                btn.style.display = 'block';
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '../admin/upload.php');
+                xhr.setRequestHeader('X-Admin-Password', sessionStorage.getItem('hermes_admin_pwd'));
+                xhr.upload.onprogress = e => {
+                    if (e.lengthComputable) fill.style.width = Math.round(e.loaded / e.total * 100) + '%';
+                };
+                xhr.onload = () => {
+                    btn.disabled = false;
+                    const res = JSON.parse(xhr.responseText);
+                    if (res.ok) {
+                        toast('Opera salvata');
+                        resetForm();
+                        loadGallery();
+                    } else {
+                        toast('Errore: ' + (res.error || 'sconosciuto'));
+                        bar.style.display = 'none';
+                    }
+                };
+                xhr.onerror = () => { btn.disabled = false;
+                    toast('Errore di rete');
+                };
+                xhr.send(fd);
+
+            // CARICA GALLERIA DAL SERVER
+                
+            }
 
 
 
