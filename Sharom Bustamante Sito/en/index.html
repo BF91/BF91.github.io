@@ -16,26 +16,116 @@
     <link rel="alternate" hreflang="it" href="https://www.esempio.com/it/" />
     <link rel="alternate" hreflang="es" href="https://www.esempio.com/es/" />
     <link rel="alternate" hreflang="x-default" href="https://www.esempio.com/en/" />
-  </head>
 
 <!-- Anteprima su social (Facebopok, Linkedin, Whatsapp, ecc)-->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Shannon J. Hermes | Comics, Illustrations & Commissions" />
-  <meta property="og:description" content="Official portfolio of S. J. Hermes - comics, illustrations, fanzines and open commissions. Explore original art and collaborate." />
-  <meta property="og:url" content="https://www.esempio.com/en/" />
-  <meta property="og:image" content="_______IMG" />
-  <meta property="og:local" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shannon J. Hermes | Comics, Illustrations & Commissions" />
+    <meta property="og:description" content="Official portfolio of S. J. Hermes - comics, illustrations, fanzines and open commissions. Explore original art and collaborate." />
+    <meta property="og:url" content="https://www.esempio.com/en/" />
+    <meta property="og:image" content="_______IMG" />
+    <meta property="og:local" content="en_US" />
 
-<!-- Anteprima X-Card (Twitter/X)-->
-  <meta name="twitter:card" content="summary_larg_img" />
-  <meta name="twitter:title" content="Shannon J. Hermes | Comics, Illustrations & Commissions" />
-  <meta name="twitter:description" content="Official portfolio of S. J. Hermes - comics, illustrations, fanzines and open commissions. Explore original art and collaborate." />
-  <meta name="twitter:image" content="_______IMG" />
+  <!-- Anteprima X-Card (Twitter/X)-->
+    <meta name="twitter:card" content="summary_larg_img" />
+    <meta name="twitter:title" content="Shannon J. Hermes | Comics, Illustrations & Commissions" />
+    <meta name="twitter:description" content="Official portfolio of S. J. Hermes - comics, illustrations, fanzines and open commissions. Explore original art and collaborate." />
+    <meta name="twitter:image" content="_______IMG" />
 
-<!--Favorite Icon - AGGIUNGERE quando presente il logo -->
-  <link rel="icon" href="/_______IMG.ico" />
-  <link rel="icon" href="/_______IMG.SVG" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/_____IMG-apple-touch-icon.png" />
+  <!--Favorite Icon - AGGIUNGERE quando presente il logo -->
+    <link rel="icon" href="/_______IMG.ico" />
+    <link rel="icon" href="/_______IMG.SVG" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/_____IMG-apple-touch-icon.png" />
 
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-sjh.css" />
+  </head>
+  <body>
+<!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <img src="/images/Logo-SJH.png" alt="Shannon J. Hermes">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#request">Special Request</a></li>
+        <li><a href="#collaboration">Collaboration</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+<!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+<!-- SIDEBAR SMARTPHONE MENU -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar" aria-hidden="true">
+      <a href="#home"         onclick="closeSidebar()">Home</a>
+      <a href="#portfolio"    onclick="closeSidebar()">Portfolio</a>
+      <a href="#request"      onclick="closeSidebar()">Special Request</a>
+      <a href="#collaboration" onclick="closeSidebar()">Collaboration</a>
+      <a href="#support"      onclick="closeSidebar()">Support</a>
+      <a href="#contact"      onclick="closeSidebar()">Contact</a>
+    </aside>
+
+<!-- SUBMENU -->
+    <div class="container">
+      <figure class="character">
+        <a href="#character"><img src="/images/mascotte.jpg" alt="Caracter Design"></a>
+        <figcaption>Character Design<br>Portfolio</figcaption>
+      </figure>
+      <figure class="illustration">
+        <a href="#illustration"><img src="/images/mascotte.jpg" alt="Illustrations"></a>
+        <figcaption>Illustrations<br>Portfolio</figcaption>
+      </figure>
+      <figure class="comic">
+        <a href="#comic"><img src="/images/mascotte.jpg" alt="Comics"></a>
+        <figcaption>Comics<br>Portfolio</figcaption>
+      </figure>
+    </div>
+
+<!-- HERO SECTION -->
+    <section class="hero">
+      <div id="hero-icon">
+        <img src="/images/mascotte.jpg" alt="Rudolf My Mascotte">
+      </div>
+      <div id="hero-text">
+        <p>PRESENTATION, ABOUT YOU AND YOUR ART.</p>
+      </div> 
+    </section>
+
+<!--CREA JS PAGE -->
+     <script>
+      const hamburger = document.getElementById('hamburger');
+      const sidebar   = document.getElementById('sidebar');
+      const overlay   = document.getElementById('sidebar-overlay');
+ 
+      function openSidebar() {
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        sidebar.classList.add('open');
+        sidebar.setAttribute('aria-hidden', 'false');
+        overlay.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+      }
+ 
+      function closeSidebar() {
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        sidebar.classList.remove('open');
+        sidebar.setAttribute('aria-hidden', 'true');
+        overlay.classList.remove('visible');
+        document.body.style.overflow = '';
+      }
+ 
+      hamburger.addEventListener('click', () => {
+        sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+      });
+ 
+      overlay.addEventListener('click', closeSidebar);
+    </script>
+
+  </body>
 </html>
