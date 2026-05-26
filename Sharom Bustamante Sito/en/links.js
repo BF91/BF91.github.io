@@ -82,11 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
         cardEl.addEventListener('mouseenter', () => {
             const bolt = document.getElementById(boltId);
             if (bolt) bolt.classList.add('lit');
+            cardEl.classList.add('struck');
         });
  
         cardEl.addEventListener('mouseleave', () => {
             const bolt = document.getElementById(boltId);
             if (bolt) bolt.classList.remove('lit');
+            cardEl.classList.remove('stuck');
         });
     });
  
@@ -115,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* BG BOLTS */
     function drawDistantBolt() {
       const sceneW = scene.offsetWidth;
-      consr sceneH = scene.offsetHeight;
+      const sceneH = scene.offsetHeight;
 
       const x1 = sceneW * (0.1 + Math.random() * 0.8);
       const y1 = sceneH * (0.0 + Math.random() * 0.2);
@@ -134,11 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
     function scheduleDistant() {
-      const delay = 5000 + Math.random() * 10000;
+      const delay = 2000 + Math.random() * 4000;
       setTimeout(() => {
-        if (Math.random() > 0.5) {
-          setTimeout(drawDistantBolt, 120);
+        drawDistantBolt();
+
+        if (Math.random() > 0.3) {
+          setTimeout(drawDistantBolt, 100);
         }
+        if (Math.random() > 0.6) {
+            setTimeout(drawDistantBolt, 220);
+        }
+
         scheduleDistant();
       }, delay);
     }
@@ -154,25 +162,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
  
     setTimeout(drawBolts, 150);
- 
-    setTimeout(() => {
-      console.log('SVG element:', svg);
-      console.log('Scene element:', scene);
-      console.log('TitleWrap element:', titleWrap);
-      console.log('SVG children dopo drawBolts:', svg.childNodes.length);
-
-      cards.forEach(({ id }) => {
-        const el = document.getElementById(id);
-        console.log('Card ${id}:', el ? 'trovata' : 'NON TROVATA');
-        if (el) {
-          const r = el.getBoundingClientRect();
-          console.log(' posizione: top=${r.top.topFixed(0)} left=${r.left.toFixed(0)} w=${r.width.toFixed(0)} h=${r.height.toFixed(0)}');
-        }
-      });
-
-      if (titleWrap) {
-        const r = titleWrap.getBoundingClientRect();
-        console.log('TitleWrap posizione: top=${r.top.toFixed(0)} left=${r.left.toFixed(0)}');
-      }
-    }, 500);
 });
