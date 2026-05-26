@@ -836,118 +836,119 @@ figcaption {
     filter: brightness(0.55);
 }
 
-.links-main {
-    min-height: calc(100vh - 70px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 40px 100px;
-    position: relative;
-}
-
 .link-hero-img {
+    display: flex;
+    justify-content: center;
     position: relative;
-    z-index: 10;
+    z-index: 20;
+    margin-top: 20px;
+    margin-bottom: -50px;
+    pointer-events: none;
 }
 
 .link-hero-img img {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     display: block;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.7));
+}
+
+.links-scene {
+    position: relative;
+    width: 860px;
+    height: 640px;
+    max-width: 95vw;
+    margin: 0 auto 80px;
+}
+
+.lightning-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: visible;
+}
+
+.lightning-bolt {
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.lightning-bolt.lit {
+    stroke: rgba(255, 230, 80, 1);
+    stroke-width: 3;
+    filter:
+            drop-shadow(0 0 4px rgba(255, 230, 80, 1))
+            drop-shadow(0 0 12px rgba(255, 200, 0, 0.8))
+            drop-shadow(0 0 28px rgba(255, 180, 0, 0.4));
+}
+
+.lightning-bolt.flash {
+    stroke: rgba(255, 225, 225, 1);
+    stroke-width: 2.5;
+    filter:
+        drop-shadow(0 0 5px rgba(255, 255, 255, 1))
+        drop-shadow(0 0 16px rgba(200, 220, 255, 0.9))
+        drop-shadow(0 0 36px rgba(150, 180, 225, 0.5));
+}
+
+.lightning-bolt.distant-flash {
+    stroke: rgba(180, 200, 255, 0.7);
+    stroke-width: 1;
+    filter: drop-shadow(0 0 8px rgba(180, 200, 255, 0.5));
 }
 
 .links-title-wrap {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    position: relative;
     z-index: 5;
-    margin-bottom: 20px;
+    width: 100%;
+    pointer-events: none;
 }
 
 .links-title-wrap h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
     color: #ffffff;
-    text-shadow:
-            3px 3px 0px rgba(0, 0, 0, 0.8),
-            0 0 30px rgba(249, 46, 182, 0.4);
     margin: 0;
     line-height: 1;
+    text-shadow:
+            3px 3px 0 rgba(0, 0, 0, 0.8),
+            0 0 30px rgba(249, 46, 182, 0.5);
 }
 
 .links-title-wrap p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
     margin-top: 8px;
 }
-
-.links-scene {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    min-width: 480px;
-    margin: 0 auto;
-}
-
-.lightning-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    overflow: visible;
-}
-
-.lightning-bolt {
-    stroke: rgba(255, 255, 255, 0.25);
-    stroke-width: 2;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: stroke 0.6s ease, filter 0.6s ease, stroke-width 0.6s ease;
-}
-
-.lightning-bolt.lit {
-    stroke: rgba(255, 220, 60, 0.95);
-    stroke-width: 3;
-    filter:
-            drop-shadow(0 0 6px rgba(255, 220, 60, 0.8))
-            drop-shadow(0 0 16px rgba(255, 220, 0, 0.4));
-}
-
-@keyframes bolt-pulse {
-    0% { stroke-opacity: 0.25; }
-    48% { stroke-opacity: 0.25 }
-    50% { stroke-opacity: 0.7; stroke: rgba(255, 220, 60, 0.7); }
-    52% { stroke-opacity: 0.25; stroke: rgba(255, 225, 225, 0.25); }
-    100% { stroke-opacity: 0.25; }
-}
-
-.lightning-bolt {
-    animation: bolt-pulse 8s ease-in-out infinite;
-}
-
-.lightning-bolt:nth-child(1) { animation-delay: 0s; }
-.lightning-bolt:nth-child(2) { animation-delay: 3s; }
-.lightning-bolt:nth-child(3) { animation-delay: 6s; }
 
 .link-card {
     position: absolute;
     text-decoration: none;
     color: var(--text);
-    background-color: rgba(255, 235, 224, 0.92);
-    border: none;
+    background-color: rgba(255, 235, 224, 0.93);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
     z-index: 5;
     outline: 3px solid var(--text);
     box-shadow:
             4px 4px 0 1px var(--text),
             -1px -1px 0 1px var(--text);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .link-card:hover {
@@ -963,8 +964,8 @@ figcaption {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    padding-inline: 20px 24px;
+    gap: 10px;
+    padding-inline: 28px 30px;
     text-align: center;
     pointer-events: none;
 }
@@ -984,10 +985,10 @@ figcaption {
 }
 /* Kofi */
 .card-kofi {
-    width: 200px;
-    height: 160px;
-    left: 4%;
-    top: 60px;
+    width: 210px;
+    height: 155px;
+    left: 5%;
+    top: 280px;
     transform: rotate(-2.5deg);
     border-radius: 5px 12px 8px 4px;
 }
@@ -997,10 +998,10 @@ figcaption {
 }
 /* Instagram */
 .card-instagram {
-    width: 180px;
-    height: 180px;
+    width: 175px;
+    height: 175px;
     right: 6%;
-    top: 30px;
+    top: 260px;
     transform: rotate(2deg);
     border-radius: 10px 4px 12px 6px;
 }
@@ -1010,10 +1011,10 @@ figcaption {
 }
 /*Discord*/
 .card-discord {
-    width: 140px;
+    width: 150px;
     height: 140px;
     left: 50%;
-    top: 290px;
+    top: 440px;
     transform: translateX(-50%) rotate(-1deg);
     border-radius: 4px 10px 6px 12px;
 }
