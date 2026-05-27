@@ -194,8 +194,6 @@ a {
     transform: translateY(20px);
 }
 
-
-
 /* Sidebar overlay */
 .sidebar-overlay {
     display: none;
@@ -842,6 +840,7 @@ figcaption {
     border-right: 1px solid var(--text);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 48px 28px;
     gap: 30px;
     z-index: 100;
@@ -849,7 +848,7 @@ figcaption {
 
 .sidebar-label {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
     opacity: 0.4;
@@ -1054,6 +1053,60 @@ figcaption {
     background-color: var(--magentafluo);
     transform: rotate(45deg) scale(1.2);
 }
+
+/* PORTFOLIO - GRID LAYOUT */
+.grid-main {
+    flex: 1;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.grid-header {
+    text-align: center;
+}
+
+.grid-header h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: clamp(3.5rem, 4vw, 3.5rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.grid-header p {
+    font-size: 18px;
+    opacity: 0.65;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
 
 /* LINKTREE */
 .links-bg {
