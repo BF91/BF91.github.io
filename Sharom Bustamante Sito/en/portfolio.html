@@ -58,6 +58,7 @@
         <span></span>
       </button>
     </nav>
+    
 <!-- SIDEBAR SMARTPHONE MENU -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
     <aside class="sidebar" id="sidebar" aria-hidden="true">
@@ -69,26 +70,55 @@
       <a href="linktree.html"      onclick="closeSidebar()">Linktree</a>
     </aside>
 
-<!-- SIDEBAR MENU SX -->
-    <div class="portfoliosidebar" id="portfoliosidebar"></div>
-    <asaide class="sidebar-portfolio" id="sidebar-portfolio">
-        <a href="character.html" id="character">Character Design</a>
-        <a href="illustration.html" id="illustration">Illustrations</a>
-        <a href="comics.html" id="comics">Comics</a>
-    </asaide>
+<!-- SIDEBAR + CAROUSEL -->
+    <div class="portfolio-layout">
 
-<!-- CAROUSEL LATEST -->
-    <div class="carousel-container">
-        <div class="carousel-slide">
-            <img src="/images/sky-night.jpg" alt="Prima immagine">
-            <img src="/images/Star.png" alt="Seconda immagine">
-            <img src="/images/mascotte.jpg" alt="Terza immagine">
-            <img src="/images/scrivania.jpg" alt="Quarta immagine">
-        <!-- dupl 1st img continuum effect -->
-             <img src="/images/sky-night.jpg" alt="Prima immagine">
-        </div>
+<!-- SIDEBAR PORTFOLIO SX -->
+        <aside class="sidebar-portfolio" id="sidebar-portfolio">
+            <p class="sidebar-label">Portfolio</p>
+            <a href="character.html" class="sidebar-link">Character Design</a>
+            <a href="illustration.html" class="sidebar-link">Illustrations</a>
+            <a href="comics.html" class="sidebar-link">Comics</a>
+        </aside>
+
+    <!-- MAIN -->
+        <main class="portfolio-main">
+            <div class="portfolio-header">
+                <h1>Portfolio</h1>
+                <h2>Lastest Works</h2>
+                <p>My most recent illustrations, characters and comics.</p>
+            </div>
+        <!-- CAROUSEL 3D -->
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" id="carousel-prev" arrai-label="Previous">
+                    &#8592;
+                </button>
+            <!-- IMG TRACK -->
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-item" data-index="0">
+                        <img src="/images/sky-night.jpg" alt="Work 1">
+                    </div>
+                    <div class="carousel-item" data-index="1">
+                        <img src="/images/Star.png" alt="work 2">
+                    </div>
+                    <div class="carousel-item" data-index="2">
+                        <img src="/images/mascotte.jpg" alt="Work 3">
+                    </div>
+                    <div class="carousel-item" data-index="3">
+                        <img src="/images/scrivania.jpg" alt="Work 4">
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn-next" id="carousel-next" aria-label="Next">
+                    &#8594;
+                </button>
+
+            <!-- DOTS NAVIGATE -->
+                <div class="carousel-dots" id="carousel-dots"></div>
+
+            </div>
+        </main>
     </div>
-
 
 
     <a href="#top" id="backToTop" class="hidden" aria-label="Back to the Top">
@@ -142,5 +172,6 @@
       </div>
     </footer>
     <script src="javasjh.js"></script>
+    <script src="portfolio.js"></script>
   </body>
 </html>

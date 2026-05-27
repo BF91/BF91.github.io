@@ -825,76 +825,235 @@ figcaption {
 }
 
 /* PORTFOLIO */
-.portfoliosidebar {
-    position: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background-color: var(--bkgcolor);
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+.portfolio-layout {
+    display: flex;
+    flex-direction: row;
+    min-height: calc(100vh - 70px);
 }
 
 .sidebar-portfolio {
     position:sticky;
-    align-items: center;
-    top: 0;
-    left: 30px;
-    height: 100%;
-    width: 300px;
+    top: 70px;
+    left: 0;
+    width: 240px;
+    min-width: 240px;
+    height: calc(120vh - 80px);
     background-color: var(--bkgcolor);
     border-right: 1px solid var(--text);
-    z-index: 1000;
     display: flex;
     flex-direction: column;
-    padding: 170px 32px 80px;
+    padding: 48px 28px;
     gap: 30px;
+    z-index: 100;
 }
 
-.sidebar-portfolio a {
+.sidebar-label {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 8px;
+}
+
+.sidebar-link {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     color: var(--text);
-    transition: color 0.2s;
+    position: relative;
+    padding-left: 0;
+    transform: color 0.2s, padding-left 0.2s;
 }
 
-.sidebar-portfolio a:hover {
+.sidebar-link::before {
+    content: '';
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0;
+    background-color: var(--magentafluo);
+    transform: height 0.2s ease;
+}
+
+.sidebar-link:hover {
     color: var(--violetfluo);
+    padding-left: 8px;
     font-weight: bold;
 }
 
-.carousel-container {
-    width: 80%;
-    max-width: 600px;
-    overflow: hidden;
-    margin: auto;
-    border: 2px solid var(--text);
-    border-radius: 8px;
-}
-
-.carousel-slide {
+.portfolio-main {
+    flex: 1;
+    padding: 48px 40px;
     display: flex;
-    width: 400%;
-    animation: scorri 10s ease-in-out infinite;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
 }
 
-.carousel-slide img {
-    width: 25%;
+.portfolio-header {
+    text-align: center;
+}
+
+.portfolio-header h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(3.5rem, 4vw, 3.5rem);
+    margin-bottom: 8px;
+}
+
+.portfolio-header h2 {
+    font-size: clamp(2rem, 2vw, 2.5rem);
+}
+
+.portfolio-header p {
+    font-size: 15px;
+    opacity: 0.65;
+}
+
+/* Carousel */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 0 40px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    z-index: 10;
+    background-color: var(--bkgcolor);
+    border: 2px solid var(--text);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background-color: var(--text);
+    color: var(--greenfluo);
+}
+
+.carousel-btn-prev { left: -10px; }
+.carousel-btn-next { right: -10px; }
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    height: 340px;
+    position: relative;
+    perspective: 1000px;
+}
+
+/* Single Card Image */
+.carousel-item {
+    position: absolute;
+    border: 1px solid var(--text);
+    overflow: hidden;
+    cursor: pointer;
+    transition:
+                transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                width 0.5s ease,
+                height 0.5s ease,
+                opacity 0.5s ease,
+                box-shadow 0.5s ease,
+                left 0.5s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
+    pointer-events: none;
 }
 
-@keyframes scorri {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(0); }
-    30% { transform: translateX(-100%); }
-    55% { transform: translateX(-100%); }
-    60% { transform: translateX(-200%); }
-    85% { transform: translateX(-200%); }
-    100% { transform: translateX(-300%); }
+.carousel-item.pos-center {
+    width: 380px;
+    height: 320px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(0) rotateY(0deg);
+    opacity: 1;
+    z-index: 5;
 }
 
+.carousel-item.pos-left {
+    width: 240px;
+    height: 200px;
+    left: clac(50% - 340px);
+    transform: translateX(-80%) translateZ(-100px) rotateY(16deg);
+    opacity: 0.65;
+    z-index: 3;
+    box-shadow: 3px 3px 0 1px rgba(0, 0, 0, 0.35);
+}
+
+.carousel-item.pos-right {
+    width: 240px;
+    height: 200px;
+    left: clac(50% + 340px);
+    transform: translateX(80%) translateZ(100px) rotateY(16deg);
+    opacity: 0.65;
+    z-index: 3;
+    box-shadow: 3px 3px 0 1px rgba(0, 0, 0, 0.35);
+}
+
+.carousel-item.pos-hidden {
+    width: 160px;
+    height: 140px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel-item.pos-hidden-left {
+    left: calc(50% - 500px);
+    transform: translateX(-50%) translateZ(-160px) rotateY(20deg);
+}
+
+.carousel.carousel-item.pos-hidden-right {
+    left: calc(50% + 500px);
+    transform: translateX(-50%) translateZ(-160px) rotateY(-20deg);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--text);
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    transform: rotate(45deg);
+}
+
+.carousel-dot.active {
+    background-color: var(--magentafluo);
+    transform: rotate(45deg) scale(1.2);
+}
 
 /* LINKTREE */
 .links-bg {
