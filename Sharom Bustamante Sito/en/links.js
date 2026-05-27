@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardEl.addEventListener('mouseleave', () => {
             const bolt = document.getElementById(boltId);
             if (bolt) bolt.classList.remove('lit');
-            cardEl.classList.remove('stuck');
+            cardEl.classList.remove('struck');
         });
     });
  

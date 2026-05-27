@@ -857,7 +857,7 @@ figcaption {
 .links-scene {
     position: relative;
     width: 860px;
-    height: 640px;
+    height: 760px;
     max-width: 95vw;
     margin: 0 auto 80px;
 }
@@ -948,7 +948,7 @@ figcaption {
     box-shadow:
             4px 4px 0 1px var(--text),
             -1px -1px 0 1px var(--text);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease;
 }
 
 .link-card:hover {
@@ -997,8 +997,8 @@ figcaption {
 .card-kofi {
     width: 210px;
     height: 155px;
-    left: 5%;
-    top: 280px;
+    left: 2%;
+    top: 300px;
     transform: rotate(-2.5deg);
     border-radius: 5px 12px 8px 4px;
 }
@@ -1024,7 +1024,7 @@ figcaption {
     width: 150px;
     height: 140px;
     left: 50%;
-    top: 440px;
+    top: 560px;
     transform: translateX(-50%) rotate(-1deg);
     border-radius: 4px 10px 6px 12px;
 }
