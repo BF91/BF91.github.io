@@ -1565,6 +1565,67 @@ figcaption {
         margin-bottom: 60px;
     }
 
+/* PORTFOLIO */
+    .portfolio-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-portfolio {
+        position: relative;
+        top: 0;
+        width: 100%;
+        max-width: unset;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid var(--text);
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px 24px;
+        gap: 16px;
+    }
+
+    .sidebar-label {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .sidebar-link::before {
+        display: none;
+    }
+
+    .sidebar-link:hover {
+        padding-left: 0;
+    }
+
+    .portfolio-main {
+        padding: 32px 16px;
+    }
+
+    .carousel-track {
+        height: 260px
+    }
+
+    .carousel-item.pos-center {
+        width: 260px;
+        height: 210px;
+    }
+
+    .carousel-item.pos-left {
+        width: 150px;
+        height: 130px;
+        left: calc(50% - 230px);
+    }
+
+    .carousel-item.pos-right {
+        width: 150px;
+        height: 130px;
+        left: calc(50% + 230px);
+    }
+
+    .carousel-btn-prev { left: 0; }
+    .carousel-btn-next { right: 0; }
+
+
 
 /* SPECIAL REQUEST */
     #sptitles {
