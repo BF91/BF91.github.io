@@ -114,3 +114,88 @@ document.addEventListener('DOMContentLoaded', () => {
     applyPositions();
     startAuto();
 });
+
+/* CHARACTER - ILLUSTRATION - COMICS GRID */
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.sidebar-link').forEach(link => {
+        if (link.getAttribute('herf') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    const gridItems = Array.from(document.querySelectorAll('.grid-item'));
+    if (gridItems.length === 0) return;
+
+    const images = gridItems.map(item => ({
+        src: item.querySelector('img').src,
+        alt: item.querySelector('img').alt,
+    }));
+
+    let currentIndex = 0;
+
+    const lightbox = document.createElement('div');
+    lightbox.clasName = 'lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('airal-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Image viewer');
+
+    lightbox.innerHTML = `
+        <button class="lightbox-prev" id="lb-prev" aria-label="Previous image">&#8592;</button>
+        <div class="lightbox-img-wrap" id="lb-wrap">
+            <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
+            <img id="lb-img" src="" alt="">
+            <p class="lightbox-caption" id="lb-caption"></p>
+        </div>
+        <button class="lightbox-next" id="lb-next" aria-label="Next image">&#8594;</button>
+    `;
+
+    document.body.appendChild(lightbox);
+
+    const lbImg = document.getElementById('lb-img');
+    const lbCaption = document.getElementById('lb-caption');
+    const lbClose = document.getElementById('lb-close');
+    const lbPrev = document.getElementById('lb-prev');
+    const lbNext = document.getElementById('lb-next');
+    const lbWrap = document.getElementById('lb-wrap');
+
+    function openLightbox(index) {
+        currentIndex = index;
+        updateLightboxImage();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function updateLightboxImage() {
+        const { src, alt } = images[currentIndex];
+        lbImg.src = src;
+        lbImg.alt = alt;
+        lbCaption.textContent = alt;
+        lbPrev.style.visiblility = images.length > 1 ? 'visible' : 'hideden';
+        lbNext.style.visibility = images.length > 1 ? 'visible' : 'hidden';
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightboxImage();
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightboxImage();
+    }
+
+    gridItems.forEach((items, i) => {
+        item.addEventListener('click', () => openLightbox(i));
+    });
+
+    /*BOTTONI LIGHTBOX - da fare!! */
+
+
+})
