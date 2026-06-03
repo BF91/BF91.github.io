@@ -1697,7 +1697,7 @@ figcaption {
     }
 
     .sidebar-portfolio {
-        position: relative;
+        position: sticky;
         top: 0;
         width: 100%;
         max-width: unset;
@@ -1708,6 +1708,8 @@ figcaption {
         flex-wrap: wrap;
         padding: 20px 24px;
         gap: 16px;
+        z-index: 99;
+        background-color: var(--bkgcolor);
     }
 
     .sidebar-label {
@@ -1940,6 +1942,6 @@ figcaption {
 
 @media (max-width: 400px) {
     .grid-container {
-        grid-tamplate-columns: 1fr;
+        grid-template-columns: 1fr;
     }
 }
