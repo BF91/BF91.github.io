@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnPrev = document.getElementById('carousel-prev');
     const btnNext = document.getElementById('carousel-next');
 
-    if (!track) return;
+    if (track) {
 
     const items = Array.from(track.querySelectorAll('.carousel-item'));
     const total = items.length;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     items.forEach((_, i) => {
         const dot = document.createElement('button');
         dot.classList.add('carousel-dot');
-        dot.setAttribute('aria-label', 'Immagine ${i + 1}');
+        dot.setAttribute('aria-label', `Immagine ${i + 1}`);
         dot.addEventListener('click', () => goTo(i));
         dotsWrap.appendChild(dot);
     });
@@ -42,10 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const dots = dotsWrap.querySelectorAll('.carousel-dot');
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === current);
-        });
-    }
+        dots.forEach((dot, i) => 
+            dot.classList.toggle('active', i === current));
+        }
 
         function goTo(index) {
             current = ((index % total) + total) % total;
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function stopAuto() {
             if (autoTimer) {
-                clearIntercval(autoTimer);
+                clearInterval(autoTimer);
                 autoTimer = null;
             }
         }
@@ -84,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     track.addEventListener('mousedown', (e) => {
-        isSragging = true;
+        isDragging = true;
         dragStartX = e.clientX;
         stopAuto();
     });
@@ -101,25 +100,30 @@ document.addEventListener('DOMContentLoaded', () => {
     /* To Mobile */
     track.addEventListener('touchstart', (e) => {
         dragStartX = e.touches[0].clientX;
-        startAuto();
+        stopAuto();
     }, { passive: true });
 
-    track.addEventListener('touched', (e) => {
+    track.addEventListener('touchend', (e) => {
         const diff = e.changedTouches[0].clientX - dragStartX;
         if (diff < -50) next();
         else if (diff > 50) prev();
         startAuto();
-    })
+    });
+
+    const wrapper = track.closest('.carousel-wrapper');
+    if(wrapper) {
+        wrapper.addEventListener('mouseenter', stopAuto);
+        wrapper.addEventListener('mouseleave', startAuto);
+    }
 
     applyPositions();
     startAuto();
-});
+}
 
 /* CHARACTER - ILLUSTRATION - COMICS GRID */
-document.addEventListener('DOMContentLoaded', () => {
     const currentPage = window.location.pathname.split('/').pop();
     document.querySelectorAll('.sidebar-link').forEach(link => {
-        if (link.getAttribute('herf') === currentPage) {
+        if (link.getAttribute('href') === currentPage) {
             link.classList.add('active');
         }
     });
@@ -135,9 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     const lightbox = document.createElement('div');
-    lightbox.clasName = 'lightbox';
+    lightbox.className = 'lightbox';
     lightbox.setAttribute('role', 'dialog');
-    lightbox.setAttribute('airal-modal', 'true');
+    lightbox.setAttribute('aria-modal', 'true');
     lightbox.setAttribute('aria-label', 'Image viewer');
 
     lightbox.innerHTML = `
@@ -177,8 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
         lbImg.src = src;
         lbImg.alt = alt;
         lbCaption.textContent = alt;
-        lbPrev.style.visiblility = images.length > 1 ? 'visible' : 'hideden';
-        lbNext.style.visibility = images.length > 1 ? 'visible' : 'hidden';
+        const show = images.length > 1 ? 'visible' : 'hidden';
+        lbPrev.style.visibility = show;
+        lbNext.style.visibility = show;
     }
 
     function showPrev() {
@@ -191,11 +196,45 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLightboxImage();
     }
 
-    gridItems.forEach((items, i) => {
+    gridItems.forEach((item, i) => {
         item.addEventListener('click', () => openLightbox(i));
     });
 
-    /*BOTTONI LIGHTBOX - da fare!! */
+    /*Button LIGHTBOX*/
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', showPrev);
+    lbNext.addEventListener('click', showNext);
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    lbWrap.addEventListener('click', (e) => e.stopPropagation());
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+    });
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+        const diffX = e.changedTouches[0].clientX - touchStartX;
+        const diffY = e.changedTouches[0].clientY - touchStartY;
+        if (diffY > 80 && Math.abs(diffX) < 60) {
+            closeLightbox();
+        } 
+        if (diffX < -50) showNext();
+        else if (diffX > 50) showPrev();
+    });
 
 
-})
+});
